@@ -1,0 +1,169 @@
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #070814;
+  color: white;
+  line-height: 1.6;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 8%;
+  position: sticky;
+  top: 0;
+  background: rgba(7, 8, 20, 0.85);
+  backdrop-filter: blur(12px);
+  z-index: 10;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.nav a {
+  color: #ddd;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.hero {
+  min-height: 90vh;
+  padding: 120px 8%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.glow {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(255, 69, 200, 0.35), transparent 70%);
+  right: 10%;
+  top: 15%;
+  z-index: -1;
+}
+
+.tag {
+  color: #ff80df;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: clamp(2.8rem, 7vw, 6rem);
+  max-width: 900px;
+  line-height: 1.05;
+}
+
+.sub {
+  max-width: 650px;
+  margin: 25px 0;
+  color: #cfcfe8;
+  font-size: 1.15rem;
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 14px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+}
+
+.primary {
+  background: linear-gradient(135deg, #ff4fd8, #5d7cff);
+  color: white;
+}
+
+.secondary {
+  border: 1px solid #555bff;
+  color: white;
+}
+
+.section {
+  padding: 80px 8%;
+}
+
+.section h2 {
+  font-size: 2.4rem;
+  margin-bottom: 30px;
+}
+
+.cards,
+.pricing,
+.occasion-grid {
+  display: grid;
+  gap: 22px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.card,
+.price-card,
+.occasion-grid div {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 0 30px rgba(93,124,255,0.08);
+}
+
+.card span {
+  color: #ff80df;
+  font-weight: bold;
+}
+
+.price {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.featured {
+  border: 1px solid #ff80df;
+  transform: scale(1.03);
+}
+
+.final {
+  text-align: center;
+}
+
+footer {
+  padding: 30px 8%;
+  color: #aaa;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
+}

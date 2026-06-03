@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy 5th Birthday!</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ffb6f2, #b884ff);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    .page {
+      padding: 30px 18px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero {
+      padding: 45px 20px;
+      background: rgba(255, 255, 255, 0.18);
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      margin-bottom: 30px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 10px 0;
+      text-shadow: 3px 3px 0 rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      font-size: 2rem;
+      margin-top: 0;
+    }
+
+    p {
+      font-size: 1.25rem;
+      line-height: 1.6;
+    }
+
+    .big-number {
+      font-size: 6rem;
+      font-weight: bold;
+      background: #fff;
+      color: #d64cff;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 20px auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.22);
+      border-radius: 25px;
+      padding: 25px;
+      margin: 25px 0;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.18);
+    }
+
+    .love-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .love-item {
+      background: rgba(255,255,255,0.9);
+      color: #7a27c9;
+      padding: 18px;
+      border-radius: 20px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-box {
+      height: 180px;
+      background: rgba(255,255,255,0.85);
+      border-radius: 20px;
+      color: #9b4de0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      padding: 10px;
+    }
+
+    .wish {
+      font-size: 1.35rem;
+      font-weight: bold;
+      background: #fff;
+      color: #d64cff;
+      padding: 25px;
+      border-radius: 25px;
+      margin-top: 20px;
+    }
+
+    .balloon {
+      position: fixed;
+      bottom: -120px;
+      font-size: 3rem;
+      animation: floatUp 10s infinite ease-in;
+      opacity: 0.85;
+      z-index: -1;
+    }
+
+    .balloon:nth-child(1) { left: 8%; animation-delay: 0s; }
+    .balloon:nth-child(2) { left: 25%; animation-delay: 2s; }
+    .balloon:nth-child(3) { left: 50%; animation-delay: 4s; }
+    .balloon:nth-child(4) { left: 72%; animation-delay: 1s; }
+    .balloon:nth-child(5) { left: 88%; animation-delay: 3s; }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-120vh); }
+    }
+
+    footer {
+      margin: 35px 0 10px;
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.3rem; }
+      h2 { font-size: 1.6rem; }
+      p { font-size: 1.1rem; }
+      .big-number {
+        width: 105px;
+        height: 105px;
+        font-size: 4.5rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="balloon">🎈</div>
+  <div class="balloon">💜</div>
+  <div class="balloon">🎉</div>
+  <div class="balloon">💕</div>
+  <div class="balloon">🎈</div>
+
+  <div class="page">
+
+    <section class="hero">
+      <h1>🎉 Happy 5th Birthday! 🎉</h1>
+      <div class="big-number">5</div>
+      <p>Today we celebrate one of the coolest, funniest, most amazing birthday girls around!</p>
+    </section>
+
+    <section class="card">
+      <h2>💖 Meet the Birthday Star</h2>
+      <p>
+        She is 5 years old and full of laughter, imagination, and fun.
+        She loves her family, animals, dancing, drawing, and making everyone around her smile.
+      </p>
+      <p>
+        Whether she is showing off her dance moves, creating a masterpiece, or being her funny little self,
+        she brings happiness everywhere she goes.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>🌟 Things She Loves</h2>
+
+      <div class="love-grid">
+        <div class="love-item">💗 Pink</div>
+        <div class="love-item">💜 Purple</div>
+        <div class="love-item">🐱 Cats</div>
+        <div class="love-item">🍿 Popcorn</div>
+        <div class="love-item">💃 Dancing</div>
+        <div class="love-item">🎨 Drawing</div>
+        <div class="love-item">⭐ Rumi</div>
+        <div class="love-item">👨‍👩‍👧 Family</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🎶 Her Perfect Day</h2>
+      <p>
+        Her perfect day would have pink and purple everywhere, yummy popcorn,
+        lots of dancing, time to draw, cats to love, family close by,
+        and maybe even a little K-Pop Demon Hunters fun.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>📸 Photo Gallery</h2>
+      <p>Add her pictures here.</p>
+
+      <div class="gallery">
+        <div class="photo-box">Photo 1</div>
+        <div class="photo-box">Photo 2</div>
+        <div class="photo-box">Photo 3</div>
+        <div class="photo-box">Photo 4</div>
+        <div class="photo-box">Photo 5</div>
+        <div class="photo-box">Photo 6</div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>🎂 Birthday Wish</h2>
+      <div class="wish">
+        May your birthday be filled with cake, laughter, dancing, popcorn, family, fun,
+        and all the pink and purple magic in the world. Happy 5th Birthday!
+      </div>
+    </section>
+
+    <footer>
+      Made with love for a very special birthday girl 💜
+    </footer>
+
+  </div>
+
+</body>
+</html>

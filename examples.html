@@ -1,2 +1,200 @@
-<a href="birthday.html">View Birthday Example</a>
-<a href="Chloe-Lucas-anniversary.html">View Anniversary Example</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example Celebrations</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #08111f;
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 24px 18px;
+      background: #050b14;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 0 10px;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: auto;
+      padding: 50px 18px;
+    }
+
+    .hero {
+      margin-bottom: 45px;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 12px;
+      background: linear-gradient(90deg, #9b5cff, #ff8a3d, #43e38a);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      color: #d7d7d7;
+      max-width: 700px;
+      margin: auto;
+      line-height: 1.6;
+    }
+
+    .examples-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+    }
+
+    .example-card {
+      background: rgba(255,255,255,0.07);
+      border-radius: 24px;
+      padding: 24px;
+      text-decoration: none;
+      color: white;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.12);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .example-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .example-card h2 {
+      margin: 8px 0;
+      font-size: 1.6rem;
+    }
+
+    .example-card p {
+      color: #d8d8d8;
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    .birthday {
+      border-top: 5px solid #9b5cff;
+    }
+
+    .anniversary {
+      border-top: 5px solid #ff8a3d;
+    }
+
+    .graduation {
+      border-top: 5px solid #43e38a;
+    }
+
+    .mothers-day {
+      border-top: 5px solid #ff6fcf;
+    }
+
+    .coming-soon {
+      opacity: 0.65;
+      cursor: default;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 14px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      background: white;
+      color: #08111f;
+      font-weight: bold;
+    }
+
+    footer {
+      padding: 35px 18px;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2.3rem;
+      }
+
+      header a {
+        display: inline-block;
+        margin: 8px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">Home</a>
+    <a href="examples.html">Examples</a>
+    <a href="index.html#pricing">Pricing</a>
+  </header>
+
+  <main class="page">
+
+    <section class="hero">
+      <h1>Explore Example Celebrations</h1>
+      <p>
+        Every Cyber Celebration is custom-made for the person, moment, and memory.
+        Pick an example below to see what a finished celebration page can look like.
+      </p>
+    </section>
+
+    <section class="examples-grid">
+
+      <a href="birthday.html" class="example-card birthday">
+        <div class="icon">🎂</div>
+        <h2>Birthday Celebration</h2>
+        <p>A fun, colorful birthday page filled with favorite things, photos, and birthday magic.</p>
+        <span class="button">View Birthday Example</span>
+      </a>
+
+      <a href="chloe-lucas-anniversary.html" class="example-card anniversary">
+        <div class="icon">❤️</div>
+        <h2>Anniversary Celebration</h2>
+        <p>An elegant love story page with a timeline, memories, photos, and a heartfelt message.</p>
+        <span class="button">View Anniversary Example</span>
+      </a>
+
+      <div class="example-card graduation coming-soon">
+        <div class="icon">🎓</div>
+        <h2>Graduation Celebration</h2>
+        <p>A page to honor big achievements, proud moments, and the next exciting chapter.</p>
+        <span class="button">Coming Soon</span>
+      </div>
+
+      <div class="example-card mothers-day coming-soon">
+        <div class="icon">🌸</div>
+        <h2>Mother's Day Celebration</h2>
+        <p>A heartfelt tribute page for moms, grandmothers, and the people who do it all.</p>
+        <span class="button">Coming Soon</span>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    Cyber Celebrations — Custom pages for special moments
+  </footer>
+
+</body>
+</html>

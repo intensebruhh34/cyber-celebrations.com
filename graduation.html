@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Graduation Celebration</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Georgia, serif;
+      background: linear-gradient(135deg, #0f1a0f, #1f3b24, #2d5a34);
+      color: white;
+      text-align: center;
+    }
+
+    .page {
+      max-width: 1000px;
+      margin: auto;
+      padding: 35px 18px;
+    }
+
+    .hero, .card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(175, 215, 120, 0.25);
+      border-radius: 28px;
+      padding: 35px 24px;
+      margin: 25px 0;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.35);
+    }
+
+    .hero {
+      padding: 70px 24px;
+    }
+
+    h1 {
+      font-size: 3.4rem;
+      color: #cfe59d;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      color: #cfe59d;
+      font-size: 2rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+      line-height: 1.7;
+    }
+
+    .subtitle {
+      color: #e7f2cf;
+      font-style: italic;
+      font-size: 1.4rem;
+    }
+
+    .badge {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #cfe59d;
+      color: #18301b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 25px auto;
+      font-size: 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .photo-box {
+      height: 190px;
+      background: rgba(255,255,255,0.9);
+      color: #1f3b24;
+      border-radius: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+    }
+
+    .letter {
+      background: rgba(255,255,255,0.08);
+      border-radius: 25px;
+      padding: 30px;
+      color: #f1f7e8;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    .cta-area {
+      margin-top: 40px;
+    }
+
+    .cta {
+      display: inline-block;
+      margin: 10px;
+      padding: 15px 30px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-family: Arial, sans-serif;
+    }
+
+    .primary {
+      background: #cfe59d;
+      color: #18301b;
+    }
+
+    .secondary {
+      background: rgba(255,255,255,0.1);
+      color: white;
+    }
+
+    footer {
+      margin: 35px 0 10px;
+      color: #e7f2cf;
+    }
+
+    @media (max-width:600px) {
+      h1 { font-size: 2.5rem; }
+      h2 { font-size: 1.6rem; }
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="page">
+
+  <section class="hero">
+    <h1>Congratulations, Ethan!</h1>
+
+    <p class="subtitle">
+      A celebration of hard work, perseverance, and a bright future ahead.
+    </p>
+
+    <div class="badge">🎓</div>
+
+    <p>
+      Today isn't just about receiving a diploma.
+      It's about celebrating every challenge overcome and every goal achieved.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🌟 Graduate Spotlight</h2>
+
+    <p>
+      Ethan has worked hard, stayed focused, and achieved an incredible milestone.
+      His dedication and determination have brought him to this moment, and everyone who knows him is proud.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>🏆 Achievements</h2>
+
+    <div class="grid">
+      <div class="box">Honor Roll Student</div>
+      <div class="box">Varsity Athletics</div>
+      <div class="box">Community Volunteer</div>
+      <div class="box">Graduated With Distinction</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>😂 Favorite School Memories</h2>
+
+    <div class="grid">
+      <div class="box">Field Trips</div>
+      <div class="box">Game Days</div>
+      <div class="box">Senior Week</div>
+      <div class="box">Making Lifelong Friends</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>📸 Photo Gallery</h2>
+
+    <p>Add graduation photos, school memories, friends, family, and celebration pictures here.</p>
+
+    <div class="gallery">
+      <div class="photo-box">Photo 1</div>
+      <div class="photo-box">Photo 2</div>
+      <div class="photo-box">Photo 3</div>
+      <div class="photo-box">Photo 4</div>
+      <div class="photo-box">Photo 5</div>
+      <div class="photo-box">Photo 6</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>🚀 What's Next?</h2>
+
+    <div class="grid">
+      <div class="box">College</div>
+      <div class="box">Career Goals</div>
+      <div class="box">Travel & Adventure</div>
+      <div class="box">New Opportunities</div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>💌 Congratulations Message</h2>
+
+    <div class="letter">
+      Congratulations on reaching this incredible milestone.
+      Your hard work, dedication, and perseverance have paid off.
+      While today celebrates everything you've accomplished, it's also the beginning of an exciting new chapter.
+      We can't wait to see what you do next.
+    </div>
+  </section>
+
+  <div class="cta-area">
+
+    <a href="index.html#pricing" class="cta primary">
+      ✨ Create My Celebration
+    </a>
+
+    <br>
+
+    <a href="examples.html" class="cta secondary">
+      View More Example Celebrations
+    </a>
+
+  </div>
+
+  <footer>
+    Celebrating big achievements and bright futures 🎓
+  </footer>
+
+</div>
+
+</body>
+</html>

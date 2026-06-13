@@ -152,21 +152,7 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-@media (max-width: 700px) {
-  .nav {
-    flex-direction: column;
-    gap: 12px;
-  }
-
-  .nav a {
-    margin: 0 8px;
-    font-size: 0.9rem;
-  }
-
-  .hero {
-    padding-top: 80px;
-  }
-  .faq {
+.faq {
   padding: 80px 20px;
   max-width: 900px;
   margin: auto;
@@ -194,4 +180,19 @@ footer {
   margin-bottom: 0;
   opacity: 0.9;
 }
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .nav a {
+    margin: 0 8px;
+    font-size: 0.9rem;
+  }
+
+  .hero {
+    padding-top: 80px;
+  }
 }

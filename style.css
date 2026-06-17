@@ -152,6 +152,45 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.1);
 }
 
+.questionnaire-section {
+  max-width: 850px;
+  margin: 70px auto;
+  padding: 40px 25px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.questionnaire-section h2 {
+  font-size: 2rem;
+  margin-bottom: 18px;
+}
+
+.questionnaire-section p {
+  color: rgba(255, 255, 255, 0.82);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.questionnaire-btn {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 15px 28px;
+  border-radius: 999px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e255ff, #5f7cff);
+}
+
+.questionnaire-note {
+  margin-top: 18px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
 .faq {
   padding: 80px 20px;
   max-width: 900px;

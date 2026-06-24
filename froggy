@@ -1,0 +1,448 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Missy's Frog Approved Celebration</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(89,255,0,.18), transparent 35%),
+        linear-gradient(135deg, #061306, #020402 70%);
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: auto;
+      border-left: 3px solid #6aff00;
+      border-right: 3px solid #6aff00;
+      box-shadow: 0 0 35px rgba(106,255,0,.35);
+      background: rgba(0,0,0,.45);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 28px;
+      background: #050805;
+      border-bottom: 2px solid #6aff00;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: 900;
+      color: #6aff00;
+      text-shadow: 0 0 12px #6aff00;
+    }
+
+    .badge {
+      border: 2px solid #fff;
+      padding: 8px 12px;
+      font-weight: bold;
+      text-align: center;
+      background: #111;
+      box-shadow: 0 0 12px rgba(255,255,255,.3);
+    }
+
+    .hero {
+      min-height: 560px;
+      padding: 50px 30px;
+      display: grid;
+      grid-template-columns: 280px 1fr 260px;
+      gap: 25px;
+      align-items: center;
+      background:
+        linear-gradient(rgba(0,0,0,.45), rgba(0,0,0,.75)),
+        repeating-linear-gradient(45deg, rgba(106,255,0,.08) 0 10px, transparent 10px 20px);
+      border-bottom: 2px solid #6aff00;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      line-height: .9;
+      margin: 0;
+      text-align: center;
+      text-transform: uppercase;
+      text-shadow: 4px 4px 0 #000, 0 0 18px #6aff00;
+    }
+
+    h1 span {
+      color: #6aff00;
+      display: block;
+    }
+
+    .tagline {
+      margin: 25px auto 0;
+      max-width: 650px;
+      background: #d8ff8f;
+      color: #111;
+      padding: 12px 18px;
+      font-weight: 900;
+      text-align: center;
+      transform: rotate(-1deg);
+      border: 3px solid #111;
+    }
+
+    .intro {
+      text-align: center;
+      color: #caff9b;
+      font-size: 1.1rem;
+      margin-top: 25px;
+    }
+
+    .frog-big {
+      font-size: 9rem;
+      text-align: center;
+      filter: drop-shadow(0 0 15px #6aff00);
+    }
+
+    .photo-card {
+      min-height: 250px;
+      border: 3px dashed #6aff00;
+      background: #151515;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      transform: rotate(-2deg);
+      box-shadow: 0 0 20px rgba(106,255,0,.25);
+    }
+
+    .photo-card:nth-child(even) {
+      transform: rotate(2deg);
+    }
+
+    .photo-card p {
+      margin: 0;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .photo-card small {
+      display: block;
+      margin-top: 10px;
+      color: #caff9b;
+      font-style: italic;
+    }
+
+    section {
+      padding: 35px 25px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .box {
+      border: 2px solid #6aff00;
+      border-radius: 14px;
+      padding: 25px;
+      background: rgba(0, 0, 0, .65);
+      box-shadow: 0 0 18px rgba(106,255,0,.18);
+    }
+
+    .box h2 {
+      color: #6aff00;
+      margin-top: 0;
+      text-transform: uppercase;
+    }
+
+    .quote {
+      font-size: 2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #6aff00;
+      text-shadow: 2px 2px 0 #000;
+    }
+
+    ul {
+      padding-left: 20px;
+      line-height: 1.8;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 18px;
+    }
+
+    .gallery .photo-card {
+      min-height: 210px;
+      font-size: .95rem;
+    }
+
+    .announcement {
+      text-align: center;
+      font-size: 1.4rem;
+    }
+
+    .announcement strong {
+      display: block;
+      color: #6aff00;
+      font-size: 2.4rem;
+      margin: 15px 0;
+    }
+
+    .footer-findings {
+      text-align: center;
+      border-top: 2px solid #6aff00;
+      background: #050805;
+    }
+
+    .findings {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 16px;
+      margin-top: 25px;
+    }
+
+    .finding {
+      border: 1px solid #6aff00;
+      border-radius: 50%;
+      aspect-ratio: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .finding span {
+      font-size: 2.5rem;
+    }
+
+    .walking-frog {
+      position: fixed;
+      bottom: 14px;
+      left: -100px;
+      font-size: 58px;
+      z-index: 9999;
+      animation: frogWalk 16s linear infinite;
+      filter: drop-shadow(0 0 10px #6aff00);
+    }
+
+    @keyframes frogWalk {
+      0% {
+        left: -100px;
+        transform: scaleX(1) translateY(0);
+      }
+      25% {
+        transform: scaleX(1) translateY(-8px);
+      }
+      50% {
+        left: calc(100% + 100px);
+        transform: scaleX(1) translateY(0);
+      }
+      51% {
+        transform: scaleX(-1);
+      }
+      75% {
+        transform: scaleX(-1) translateY(-8px);
+      }
+      100% {
+        left: -100px;
+        transform: scaleX(-1) translateY(0);
+      }
+    }
+
+    .floating-frogs {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .12;
+      font-size: 3rem;
+      z-index: 0;
+    }
+
+    .floating-frogs span {
+      position: absolute;
+      animation: floaty 8s ease-in-out infinite;
+    }
+
+    .floating-frogs span:nth-child(1) { top: 12%; left: 5%; }
+    .floating-frogs span:nth-child(2) { top: 25%; right: 7%; animation-delay: 2s; }
+    .floating-frogs span:nth-child(3) { bottom: 25%; left: 10%; animation-delay: 4s; }
+    .floating-frogs span:nth-child(4) { bottom: 12%; right: 12%; animation-delay: 1s; }
+
+    @keyframes floaty {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-20px) rotate(10deg); }
+    }
+
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .grid,
+      .gallery,
+      .findings {
+        grid-template-columns: 1fr;
+      }
+
+      .frog-big {
+        font-size: 6rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="floating-frogs">
+    <span>🐸</span>
+    <span>🇺🇸</span>
+    <span>🐸</span>
+    <span>💚</span>
+  </div>
+
+  <div class="walking-frog">🐸</div>
+
+  <div class="page">
+
+    <header>
+      <div class="logo">🐸 Missy <small>aka Froggy</small></div>
+      <div class="badge">MADE IN<br>AMERICA 🇺🇸</div>
+    </header>
+
+    <div class="hero">
+      <div class="photo-card">
+        <p>YOUR PHOTO HERE!<small>Reserved for an official Missy-approved photo.</small></p>
+      </div>
+
+      <div>
+        <h1>Missy's <span>Frog Approved</span> Celebration</h1>
+        <div class="tagline">Made in America. Frog approved. Personality included at no extra charge.</div>
+        <p class="intro">
+          Welcome to the internet's most unnecessary celebration page.<br>
+          But honestly... Missy probably wouldn't have it any other way.
+        </p>
+      </div>
+
+      <div class="frog-big">🐸🇺🇸</div>
+    </div>
+
+    <section class="grid">
+      <div class="box">
+        <div class="quote">
+          “I don't have an attitude, I just have a personality you can't handle.”
+        </div>
+      </div>
+
+      <div class="photo-card">
+        <p>YOUR PHOTO HERE!<small>Add favorite TikTok screenshot or selfie.</small></p>
+      </div>
+
+      <div class="box">
+        <h2>Things We Know</h2>
+        <ul>
+          <li>🐸 Loves frogs</li>
+          <li>🇺🇸 Loves America</li>
+          <li>🎥 Makes people stop scrolling</li>
+          <li>💚 Has enough personality for several people</li>
+          <li>😂 Probably laughs at things she shouldn't</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="grid">
+      <div class="box">
+        <h2>Completely Verified Facts</h2>
+        <p><em>None of these have been verified.</em></p>
+        <ul>
+          <li>Frogs trust her.</li>
+          <li>Bald eagles respect her.</li>
+          <li>Green is faster.</li>
+          <li>Every chair in Pennsylvania is suspiciously tall.</li>
+          <li>At least one frog has called her Queen.</li>
+        </ul>
+      </div>
+
+      <div class="box announcement">
+        <h2>Public Service Announcement</h2>
+        <p>It's fine if your feet don't reach the floor when you sit in a chair.</p>
+        <strong>No one even noticed.</strong>
+        <p>Well...</p>
+        <strong>Not until now.</strong>
+      </div>
+
+      <div class="box">
+        <h2>American Made Is The Way To Go</h2>
+        <p>Some things are just better when they're made in America.</p>
+        <p>Like hard work.</p>
+        <p>Like freedom.</p>
+        <p>Like determination.</p>
+        <p>And apparently... Missy's opinions.</p>
+      </div>
+    </section>
+
+    <section>
+      <h2 style="text-align:center;color:#6aff00;font-size:2.5rem;">🐸 The Frog Hall of Fame 🐸</h2>
+
+      <div class="gallery">
+        <div class="photo-card"><p>PHOTO 1<small>Hero image</small></p></div>
+        <div class="photo-card"><p>PHOTO 2<small>Funny moment</small></p></div>
+        <div class="photo-card"><p>PHOTO 3<small>Green theme</small></p></div>
+        <div class="photo-card"><p>PHOTO 4<small>America moment</small></p></div>
+        <div class="photo-card"><p>PHOTO 5<small>Froggy approved</small></p></div>
+        <div class="photo-card"><p>PHOTO 6<small>TikTok screenshot</small></p></div>
+        <div class="photo-card"><p>PHOTO 7<small>Fan favorite</small></p></div>
+        <div class="photo-card"><p>PHOTO 8<small>Personality proof</small></p></div>
+        <div class="photo-card"><p>PHOTO 9<small>Optional bonus</small></p></div>
+        <div class="photo-card"><p>PHOTO 10<small>Case closed</small></p></div>
+      </div>
+    </section>
+
+    <section class="box" style="margin:25px;">
+      <h2>To The Froggy Squad 💚</h2>
+      <p>
+        Whether you've been here since the beginning or just recently discovered Missy's videos,
+        thanks for helping create a community that's equal parts laughter, frogs, chaos, and patriotism.
+      </p>
+      <p>
+        That's honestly a pretty impressive combination.
+      </p>
+    </section>
+
+    <section class="footer-findings">
+      <h2 style="color:#6aff00;font-size:2.3rem;">Official Cyber Celebration Findings</h2>
+      <p>After extensive investigation, we have concluded:</p>
+
+      <div class="findings">
+        <div class="finding"><span>🐸</span><p>Likes Frogs</p></div>
+        <div class="finding"><span>🇺🇸</span><p>Likes America</p></div>
+        <div class="finding"><span>🎤</span><p>Has Personality</p></div>
+        <div class="finding"><span>😂</span><p>87% Sarcasm</p></div>
+        <div class="finding"><span>😎</span><p>Would Laugh</p></div>
+      </div>
+
+      <h2 style="color:#ffd84d;">CASE CLOSED. 🐸🇺🇸💚</h2>
+      <p>Made in America • American Made Is The Way To Go • Cyber Celebrations</p>
+    </section>
+
+  </div>
+
+</body>
+</html>
+```

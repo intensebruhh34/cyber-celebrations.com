@@ -3,169 +3,231 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Birthday Showcase | Cyber Celebrations</title>
-  <link rel="stylesheet" href="../style.css" />
 
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
     body {
+      font-family: Arial, sans-serif;
+      color: white;
       background:
-        radial-gradient(circle at top left, rgba(255, 188, 221, 0.35), transparent 30%),
-        radial-gradient(circle at top right, rgba(255, 215, 145, 0.25), transparent 35%),
-        linear-gradient(135deg, #2b174f, #7b4fa3 45%, #ffd1e8);
-      color: #fff;
+        radial-gradient(circle at 20% 10%, rgba(255, 95, 200, .45), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(255, 210, 85, .25), transparent 25%),
+        radial-gradient(circle at 50% 70%, rgba(132, 92, 255, .45), transparent 35%),
+        linear-gradient(180deg, #15052e, #30105f 45%, #14051f);
       overflow-x: hidden;
     }
 
-    .birthday-nav {
-      background: rgba(43, 23, 79, 0.55);
-      border-bottom: 1px solid rgba(255,255,255,0.2);
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 7%;
+      background: rgba(20, 5, 40, .7);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(255,255,255,.14);
     }
 
-    .birthday-hero {
-      min-height: 100vh;
-      padding: 120px 8% 80px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
+    .logo {
+      font-weight: 800;
+      font-size: 1.25rem;
+      color: #ffd5f1;
+      text-shadow: 0 0 14px #ff59c7;
     }
 
-    .birthday-hero h1 {
-      font-size: clamp(3.5rem, 9vw, 8rem);
-      line-height: 0.95;
-      background: linear-gradient(135deg, #fff, #ffb8ec, #ffe27a);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-shadow: 0 0 45px rgba(255, 130, 220, 0.3);
-      margin-bottom: 25px;
+    .nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
     }
 
-    .birthday-hero .sub {
-      margin: 0 auto 30px;
-      color: #fff7ff;
-    }
-
-    .floating-stuff {
+    .floating span {
       position: fixed;
-      inset: 0;
+      z-index: 1;
       pointer-events: none;
-      z-index: 0;
-      overflow: hidden;
-    }
-
-    .floating-stuff span {
-      position: absolute;
       font-size: 2rem;
-      opacity: 0.7;
-      animation: floaty 8s infinite ease-in-out;
+      opacity: .75;
+      animation: float 7s ease-in-out infinite;
     }
 
-    .floating-stuff span:nth-child(1) { left: 8%; top: 18%; animation-delay: 0s; }
-    .floating-stuff span:nth-child(2) { left: 82%; top: 20%; animation-delay: 1s; }
-    .floating-stuff span:nth-child(3) { left: 18%; top: 70%; animation-delay: 2s; }
-    .floating-stuff span:nth-child(4) { left: 70%; top: 72%; animation-delay: 3s; }
-    .floating-stuff span:nth-child(5) { left: 45%; top: 12%; animation-delay: 4s; }
-    .floating-stuff span:nth-child(6) { left: 90%; top: 55%; animation-delay: 5s; }
+    .floating span:nth-child(1) { top: 14%; left: 8%; }
+    .floating span:nth-child(2) { top: 20%; right: 9%; animation-delay: 1s; }
+    .floating span:nth-child(3) { top: 52%; left: 5%; animation-delay: 2s; }
+    .floating span:nth-child(4) { top: 70%; right: 12%; animation-delay: 3s; }
+    .floating span:nth-child(5) { top: 38%; right: 25%; animation-delay: 4s; }
+    .floating span:nth-child(6) { top: 82%; left: 20%; animation-delay: 5s; }
 
-    @keyframes floaty {
-      0%, 100% { transform: translateY(0) rotate(0deg); }
-      50% { transform: translateY(-30px) rotate(12deg); }
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0); }
+      50% { transform: translateY(-24px) rotate(12deg); }
     }
 
-    .showcase-section {
+    .hero {
       position: relative;
       z-index: 2;
-      padding: 80px 8%;
-    }
-
-    .section-title {
+      min-height: 95vh;
+      display: grid;
+      place-items: center;
       text-align: center;
-      font-size: clamp(2rem, 5vw, 3.3rem);
-      margin-bottom: 35px;
-      color: #fff;
-      text-shadow: 0 0 25px rgba(255, 126, 210, 0.35);
+      padding: 90px 7%;
     }
 
-    .paper-section {
-      background: rgba(255, 245, 252, 0.86);
-      color: #3c2850;
-      border-radius: 34px;
-      padding: 45px;
-      box-shadow: 0 25px 70px rgba(51, 20, 80, 0.25);
-      border: 1px solid rgba(255,255,255,0.6);
+    .hero h1 {
+      font-size: clamp(3.7rem, 10vw, 8.5rem);
+      line-height: .9;
+      margin: 18px 0;
+      color: white;
+      text-shadow:
+        0 0 10px #fff,
+        0 0 25px #ff5bd4,
+        0 0 55px #9d6cff;
     }
 
-    .birthday-grid {
+    .script {
+      font-size: clamp(4rem, 13vw, 10rem);
+      display: block;
+      color: #ffd6ff;
+      font-style: italic;
+    }
+
+    .tag {
+      color: #ffe27a;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: bold;
+    }
+
+    .sub {
+      max-width: 700px;
+      margin: 0 auto 30px;
+      color: #fff2ff;
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 999px;
+      color: white;
+      text-decoration: none;
+      font-weight: 800;
+      background: linear-gradient(135deg, #ff4fc8, #ffb45f);
+      box-shadow: 0 0 25px rgba(255, 80, 200, .6);
+      border: 1px solid rgba(255,255,255,.55);
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 0 45px rgba(255, 190, 90, .7);
+    }
+
+    .section {
+      position: relative;
+      z-index: 2;
+      padding: 70px 7%;
+    }
+
+    .title {
+      text-align: center;
+      font-size: clamp(2.1rem, 5vw, 3.4rem);
+      margin-bottom: 32px;
+      color: #ffd6ff;
+      text-shadow: 0 0 20px rgba(255, 91, 212, .7);
+    }
+
+    .paper {
+      background: rgba(255, 246, 252, .92);
+      color: #321945;
+      border-radius: 32px;
+      padding: 38px;
+      box-shadow: 0 20px 70px rgba(0,0,0,.3);
+      border: 1px solid rgba(255,255,255,.8);
+    }
+
+    .grid {
       display: grid;
       gap: 22px;
-      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     }
 
-    .birthday-card {
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      border-radius: 26px;
-      padding: 26px;
-      backdrop-filter: blur(14px);
-      box-shadow: 0 15px 45px rgba(52, 20, 80, 0.22);
-      transition: 0.25s ease;
+    .fav-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.95), rgba(255,230,247,.85));
+      border-radius: 22px;
+      padding: 25px;
+      text-align: center;
+      min-height: 170px;
+      box-shadow: 0 12px 28px rgba(84, 35, 105, .22);
+      border: 1px solid rgba(255,255,255,.9);
+      transition: .25s;
     }
 
-    .birthday-card:hover {
-      transform: translateY(-6px) rotate(-1deg);
-      box-shadow: 0 0 40px rgba(255, 196, 87, 0.35);
+    .fav-card:hover {
+      transform: translateY(-8px) rotate(-1deg);
     }
 
-    .birthday-card.dark {
-      background: rgba(43, 23, 79, 0.55);
-      color: white;
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
     }
 
-    .fav-icon {
-      font-size: 2.8rem;
-      margin-bottom: 12px;
-    }
-
-    .fav-label {
-      text-transform: uppercase;
+    .label {
+      color: #b54991;
+      font-size: .8rem;
       letter-spacing: 1.5px;
-      color: #cf5fa7;
-      font-weight: bold;
-      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: 900;
     }
 
-    .fav-value {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-top: 5px;
+    .value {
+      margin-top: 8px;
+      font-weight: 900;
+      font-size: 1.1rem;
     }
 
-    .polaroid-row {
+    .quote-card {
+      background: rgba(255,255,255,.18);
+      border: 1px solid rgba(255,255,255,.35);
+      border-radius: 24px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 14px 40px rgba(0,0,0,.25);
+      line-height: 1.7;
+    }
+
+    .polaroids {
       display: grid;
       gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
     }
 
     .polaroid {
       background: white;
       color: #333;
-      padding: 12px 12px 22px;
+      padding: 12px 12px 20px;
       border-radius: 8px;
-      transform: rotate(-2deg);
-      box-shadow: 0 18px 40px rgba(0,0,0,0.3);
+      box-shadow: 0 18px 35px rgba(0,0,0,.35);
+      transform: rotate(-3deg);
     }
 
-    .polaroid:nth-child(even) {
-      transform: rotate(3deg);
-    }
+    .polaroid:nth-child(even) { transform: rotate(3deg); }
 
-    .fake-photo {
-      height: 160px;
-      border-radius: 6px;
-      background: linear-gradient(135deg, #ff9ecf, #9d7bff, #ffe27a);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .photo {
+      height: 155px;
+      border-radius: 5px;
+      background:
+        linear-gradient(135deg, rgba(255, 120, 200, .8), rgba(120, 92, 255, .85)),
+        radial-gradient(circle, #fff, transparent);
+      display: grid;
+      place-items: center;
       color: white;
       font-weight: bold;
     }
@@ -176,274 +238,212 @@
       font-weight: bold;
     }
 
-    .note-grid {
+    .notes {
       display: grid;
-      gap: 22px;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
     }
 
-    .sticky-note {
-      color: #3c2850;
+    .note {
+      color: #321945;
       padding: 28px;
       border-radius: 12px;
-      box-shadow: 0 18px 35px rgba(0,0,0,0.2);
+      min-height: 190px;
+      box-shadow: 0 16px 30px rgba(0,0,0,.25);
       transform: rotate(-2deg);
     }
 
-    .sticky-note:nth-child(1) { background: #ffd1e8; }
-    .sticky-note:nth-child(2) { background: #fff0a8; transform: rotate(2deg); }
-    .sticky-note:nth-child(3) { background: #c7f4ff; }
+    .note:nth-child(1) { background: #ffd0ec; }
+    .note:nth-child(2) { background: #ffe985; transform: rotate(2deg); }
+    .note:nth-child(3) { background: #bff3ff; }
 
     .stats {
       display: grid;
       gap: 24px;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    }
+
+    .stat {
       text-align: center;
-    }
-
-    .stat-box {
-      background: rgba(43, 23, 79, 0.55);
-      border: 1px solid rgba(255,255,255,0.35);
+      padding: 35px;
       border-radius: 28px;
-      padding: 34px 20px;
-      box-shadow: 0 0 35px rgba(255, 140, 220, 0.2);
+      background: rgba(12, 4, 35, .68);
+      border: 1px solid rgba(255,255,255,.25);
+      box-shadow: 0 0 35px rgba(255, 91, 212, .3);
     }
 
-    .stat-number {
-      font-size: 3rem;
-      font-weight: bold;
+    .num {
+      font-size: 3.2rem;
       color: #ffe27a;
+      font-weight: 900;
+      text-shadow: 0 0 18px #ff9bdc;
     }
 
     .letter {
       max-width: 900px;
       margin: auto;
       font-size: 1.12rem;
+      line-height: 1.8;
     }
 
-    .final-birthday {
+    .final {
       text-align: center;
-      min-height: 65vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      z-index: 2;
+      padding: 100px 7% 130px;
     }
 
-    .final-birthday h2 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      color: white;
-      text-shadow: 0 0 35px rgba(255, 130, 220, 0.45);
+    .final h2 {
+      font-size: clamp(2.8rem, 7vw, 5.5rem);
+      text-shadow: 0 0 35px #ff5bd4;
       margin-bottom: 20px;
     }
 
-    .heart {
-      animation: beat 1.2s infinite;
-      display: inline-block;
+    .music-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      background: rgba(12, 4, 35, .88);
+      backdrop-filter: blur(14px);
+      border-top: 1px solid rgba(255,255,255,.18);
+      padding: 14px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
     }
 
-    @keyframes beat {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.18); }
+    .music-dot {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #ff5bd4, #ffe27a);
+    }
+
+    .music-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    footer {
+      position: relative;
+      z-index: 2;
+      padding: 35px 7% 90px;
+      color: #ffeaff;
+      border-top: 1px solid rgba(255,255,255,.12);
     }
 
     @media (max-width: 700px) {
-      .paper-section {
-        padding: 26px;
-      }
-
-      .birthday-hero {
-        padding-top: 100px;
-      }
+      .nav { flex-direction: column; gap: 12px; }
+      .paper { padding: 24px; }
+      .music-bar { font-size: .85rem; }
     }
   </style>
 </head>
 
 <body>
 
-<div class="floating-stuff">
+<div class="floating">
   <span>✨</span>
-  <span>💖</span>
-  <span>🎂</span>
-  <span>🌙</span>
-  <span>⭐</span>
   <span>🎈</span>
+  <span>💖</span>
+  <span>⭐</span>
+  <span>🌼</span>
+  <span>🎂</span>
 </div>
 
-<header class="nav birthday-nav">
+<header class="nav">
   <div class="logo">Cyber Celebrations</div>
   <nav>
     <a href="../index.html">Home</a>
     <a href="../index.html#pricing">Pricing</a>
+    <a href="../index.html#pricing">Create One Like This ✨</a>
   </nav>
 </header>
 
-<section class="birthday-hero">
-  <p class="tag">A celebration made just for her</p>
-  <h1>Happy 30th Birthday,<br>Emily ✨</h1>
-
-  <p class="sub">
-    A digital birthday experience filled with favorite things, inside jokes,
-    memories, photos, and all the little details that make her unforgettable.
-  </p>
-
-  <a class="btn primary" href="#start">Begin the Celebration ✨</a>
-</section>
-
-<section id="start" class="showcase-section">
-  <div class="paper-section center">
-    <h2>Someone Made This Just For You</h2>
-    <p class="sub" style="color:#5d3b73; margin:auto;">
-      Before you scroll, take a deep breath and smile. This page exists because
-      someone wanted you to feel celebrated, remembered, and ridiculously loved.
+<section class="hero">
+  <div>
+    <p class="tag">A celebration made just for her</p>
+    <h1>Happy 30th Birthday,<span class="script">Emily ♡</span></h1>
+    <p class="sub">
+      A celebration made with memories, favorite things, inside jokes,
+      and all the little details that make you absolutely unforgettable.
     </p>
+    <a class="btn" href="#start">Begin the Celebration ✨</a>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Her Favorite Things</h2>
-
-  <div class="paper-section">
-    <div class="birthday-grid">
-      <div class="birthday-card">
-        <div class="fav-icon">💚</div>
-        <div class="fav-label">Color</div>
-        <div class="fav-value">Sage Green</div>
-      </div>
-
-      <div class="birthday-card">
-        <div class="fav-icon">☕</div>
-        <div class="fav-label">Drink</div>
-        <div class="fav-value">Iced Caramel Latte</div>
-      </div>
-
-      <div class="birthday-card">
-        <div class="fav-icon">🌼</div>
-        <div class="fav-label">Flower</div>
-        <div class="fav-value">Daisies</div>
-      </div>
-
-      <div class="birthday-card">
-        <div class="fav-icon">🎵</div>
-        <div class="fav-label">Artist</div>
-        <div class="fav-value">Post Malone</div>
-      </div>
-
-      <div class="birthday-card">
-        <div class="fav-icon">🥴</div>
-        <div class="fav-label">Emoji</div>
-        <div class="fav-value">Her entire personality</div>
-      </div>
-
-      <div class="birthday-card">
-        <div class="fav-icon">🏡</div>
-        <div class="fav-label">Place</div>
-        <div class="fav-value">Home</div>
-      </div>
+<section id="start" class="section">
+  <h2 class="title">Her Favorite Things ♡</h2>
+  <div class="paper">
+    <div class="grid">
+      <div class="fav-card"><div class="icon">💚</div><div class="label">Color</div><div class="value">Sage Green</div></div>
+      <div class="fav-card"><div class="icon">☕</div><div class="label">Drink</div><div class="value">Iced Caramel Latte</div></div>
+      <div class="fav-card"><div class="icon">🌼</div><div class="label">Flower</div><div class="value">Daisies</div></div>
+      <div class="fav-card"><div class="icon">🎵</div><div class="label">Artist</div><div class="value">Post Malone</div></div>
+      <div class="fav-card"><div class="icon">🥴</div><div class="label">Emoji</div><div class="value">Obviously this one</div></div>
+      <div class="fav-card"><div class="icon">🏡</div><div class="label">Place</div><div class="value">Home</div></div>
     </div>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">What Makes Emily, Emily</h2>
-
-  <div class="birthday-grid">
-    <div class="birthday-card dark">
-      <p>You make every room feel warmer the second you walk in.</p>
-    </div>
-
-    <div class="birthday-card dark">
-      <p>You remember the little things people say and somehow make everyone feel seen.</p>
-    </div>
-
-    <div class="birthday-card dark">
-      <p>You turn chaos into comedy and ordinary moments into stories we never forget.</p>
-    </div>
+<section class="section">
+  <h2 class="title">What Makes Emily, Emily 💕</h2>
+  <div class="grid">
+    <div class="quote-card">♡ You make every room feel warmer the second you walk in.</div>
+    <div class="quote-card">☆ You remember the little things people say and make them feel seen.</div>
+    <div class="quote-card">☺ You somehow turn chaos into a funny story everyone tells later.</div>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Memory Wall</h2>
-
-  <div class="polaroid-row">
-    <div class="polaroid">
-      <div class="fake-photo">Photo 1</div>
-      <p>Best nights</p>
-    </div>
-
-    <div class="polaroid">
-      <div class="fake-photo">Photo 2</div>
-      <p>Adventures</p>
-    </div>
-
-    <div class="polaroid">
-      <div class="fake-photo">Photo 3</div>
-      <p>Soul sister energy</p>
-    </div>
-
-    <div class="polaroid">
-      <div class="fake-photo">Photo 4</div>
-      <p>Forever laughs</p>
-    </div>
+<section class="section">
+  <h2 class="title">Memory Wall</h2>
+  <div class="polaroids">
+    <div class="polaroid"><div class="photo">Photo 1</div><p>the best nights</p></div>
+    <div class="polaroid"><div class="photo">Photo 2</div><p>adventures</p></div>
+    <div class="polaroid"><div class="photo">Photo 3</div><p>soul sisters</p></div>
+    <div class="polaroid"><div class="photo">Photo 4</div><p>always there</p></div>
+    <div class="polaroid"><div class="photo">Photo 5</div><p>forever laughs</p></div>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Inside Jokes</h2>
-
-  <div class="note-grid">
-    <div class="sticky-note">
-      <h3>“Absolutely not… but maybe.”</h3>
+<section class="section">
+  <h2 class="title">Inside Jokes ☺</h2>
+  <div class="notes">
+    <div class="note">
+      <h3>“Absolutely not... but maybe.”</h3>
       <p>The official phrase before every questionable plan.</p>
     </div>
-
-    <div class="sticky-note">
+    <div class="note">
       <h3>The Parking Lot Incident</h3>
       <p>No one knows how it happened. Everyone knows it was funny.</p>
     </div>
-
-    <div class="sticky-note">
+    <div class="note">
       <h3>One Quick Target Run</h3>
       <p>Three hours later. Full cart. No regrets.</p>
     </div>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">Little Life Stats</h2>
-
+<section class="section">
+  <h2 class="title">Little Life Stats ♡</h2>
   <div class="stats">
-    <div class="stat-box">
-      <div class="stat-number">9,482</div>
-      <p>times you made us laugh</p>
-    </div>
-
-    <div class="stat-box">
-      <div class="stat-number">713</div>
-      <p>iced coffees probably consumed</p>
-    </div>
-
-    <div class="stat-box">
-      <div class="stat-number">∞</div>
-      <p>people better because they know you</p>
-    </div>
+    <div class="stat"><div class="num">9,482</div><p>times you made us laugh</p></div>
+    <div class="stat"><div class="num">713</div><p>iced coffees probably consumed</p></div>
+    <div class="stat"><div class="num">∞</div><p>people better because they know you</p></div>
   </div>
 </section>
 
-<section class="showcase-section">
-  <h2 class="section-title">A Birthday Letter To You</h2>
-
-  <div class="paper-section letter">
+<section class="section">
+  <h2 class="title">A Birthday Letter To You 💌</h2>
+  <div class="paper letter">
     <p>
       Emily, thank you for being the kind of person people feel lucky to know.
       Thank you for showing up, for making ordinary days feel special, and for
       making people laugh when they need it most.
     </p>
-
     <br>
-
     <p>
       You are thoughtful, hilarious, strong, chaotic in the best way, and loved
       more than this page could ever fully explain.
@@ -451,17 +451,28 @@
   </div>
 </section>
 
-<section class="final-birthday">
+<section class="final">
   <h2>The world is better because you’re in it.</h2>
-  <p class="sub">Happy 30th Birthday, Emily <span class="heart">💖</span></p>
-  <br>
-  <a class="btn primary" href="../index.html#pricing">Create One Like This ✨</a>
+  <p class="sub">Happy 30th Birthday, Emily 💖</p>
+  <a class="btn" href="../index.html#pricing">Create One Like This ✨</a>
 </section>
 
 <footer>
   <p>© 2026 Cyber Celebrations</p>
   <p>Contact: cybercelebrations5@gmail.com</p>
 </footer>
+
+<div class="music-bar">
+  <div class="music-left">
+    <div class="music-dot"></div>
+    <div>
+      <strong>Good Days</strong><br>
+      <span>SZA</span>
+    </div>
+  </div>
+  <div>◀︎ &nbsp; ▶︎ &nbsp; ▶︎</div>
+  <div>♡</div>
+</div>
 
 </body>
 </html>

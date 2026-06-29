@@ -3,9 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Birthday Demo | Cyber Celebrations</title>
+  <title>Birthday Showcase | Cyber Celebrations</title>
   <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .showcase-card { margin-bottom: 24px; }
+    .center { text-align: center; }
+    .big-quote { font-size: 1.5rem; color: #fff; }
+    .memory-grid { display:grid; gap:22px; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    .photo-box {
+      min-height: 220px;
+      border-radius: 24px;
+      background: linear-gradient(135deg, rgba(255,79,216,.25), rgba(93,124,255,.25));
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#ddd;
+      border:1px solid rgba(255,255,255,.15);
+    }
+    .reveal {
+      cursor:pointer;
+      transition:.25s ease;
+    }
+    .reveal:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 35px rgba(255,128,223,.22);
+    }
+  </style>
 </head>
+
 <body>
 
 <header class="nav">
@@ -16,60 +42,107 @@
   </nav>
 </header>
 
-<section class="hero">
+<section class="hero center">
   <div class="glow"></div>
-  <p class="tag">Birthday Demo Page</p>
-  <h1>Happy Birthday, Jessica ✨</h1>
+  <p class="tag">Birthday Showcase</p>
+  <h1>Emily’s 30th Birthday ✨</h1>
   <p class="sub">
-    A private digital celebration made with memories, favorite things,
-    inside jokes, and all the little details that make her unforgettable.
+    A digital celebration built from memories, inside jokes, favorite things,
+    photos, videos, and all the little details that make someone unforgettable.
   </p>
+  <div class="buttons center">
+    <a class="btn primary" href="#begin">Begin the Celebration</a>
+  </div>
+</section>
+
+<section id="begin" class="section center">
+  <h2>Someone Made This Just For You</h2>
+  <div class="card showcase-card">
+    <p class="big-quote">
+      Before you scroll, just know this: you are loved in more ways than you probably realize.
+    </p>
+  </div>
 </section>
 
 <section class="section">
   <h2>Main Character Energy</h2>
   <div class="cards">
-    <div class="card"><span>Favorite Color</span><h3>Lavender</h3></div>
-    <div class="card"><span>Favorite Drink</span><h3>Iced Caramel Coffee</h3></div>
-    <div class="card"><span>Favorite Emoji</span><h3>😂✨</h3></div>
+    <div class="card"><span>Favorite Color</span><h3>Sage Green</h3></div>
+    <div class="card"><span>Favorite Drink</span><h3>Iced Caramel Latte</h3></div>
+    <div class="card"><span>Favorite Flower</span><h3>Daisies</h3></div>
+    <div class="card"><span>Favorite Artist</span><h3>Post Malone</h3></div>
+    <div class="card"><span>Favorite Emoji</span><h3>🥴</h3></div>
+    <div class="card"><span>Favorite Place</span><h3>Home</h3></div>
   </div>
 </section>
 
 <section class="section">
-  <h2>What Makes Her HER</h2>
-  <div class="card">
-    <p>
-      Jessica makes every room louder in the best way. She turns random plans
-      into memories, chaos into comedy, and ordinary days into stories everyone
-      still talks about.
-    </p>
+  <h2>What Makes Emily, Emily</h2>
+  <div class="cards">
+    <div class="card reveal"><p>You make every room feel warmer the second you walk in.</p></div>
+    <div class="card reveal"><p>You remember the little things people say and make them feel seen.</p></div>
+    <div class="card reveal"><p>You somehow turn chaos into a funny story everyone tells later.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Memory Wall</h2>
+  <div class="memory-grid">
+    <div class="photo-box">Photo Memory 1</div>
+    <div class="photo-box">Photo Memory 2</div>
+    <div class="photo-box">Photo Memory 3</div>
+    <div class="photo-box">Photo Memory 4</div>
   </div>
 </section>
 
 <section class="section">
   <h2>Inside Jokes</h2>
   <div class="cards">
-    <div class="card"><h3>“Absolutely not… but maybe.”</h3><p>The official phrase before every questionable plan.</p></div>
-    <div class="card"><h3>The Parking Lot Incident</h3><p>No one knows how it happened. Everyone knows it was funny.</p></div>
+    <div class="card">
+      <h3>“Absolutely not… but maybe.”</h3>
+      <p>The official phrase before every questionable plan.</p>
+    </div>
+    <div class="card">
+      <h3>The Parking Lot Incident</h3>
+      <p>No one knows how it happened. Everyone knows it was funny.</p>
+    </div>
+    <div class="card">
+      <h3>One Quick Target Run</h3>
+      <p>Three hours later. Full cart. No regrets.</p>
+    </div>
   </div>
 </section>
 
 <section class="section">
-  <h2>Birthday Message</h2>
+  <h2>Little Life Stats</h2>
+  <div class="cards">
+    <div class="card"><h3>9,482</h3><p>Times you made us laugh.</p></div>
+    <div class="card"><h3>713</h3><p>Iced coffees probably consumed.</p></div>
+    <div class="card"><h3>∞</h3><p>People who are better because they know you.</p></div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>A Birthday Letter</h2>
   <div class="card">
     <p>
-      Happy Birthday, Jessica. You are loved more than you probably realize.
-      Today is all about celebrating your weird, hilarious, thoughtful,
-      unforgettable self.
+      Emily, thank you for being the kind of person people feel lucky to know.
+      Thank you for showing up, for making ordinary days feel special, and for
+      making people laugh when they need it most.
+    </p>
+    <br>
+    <p>
+      You are thoughtful, hilarious, strong, chaotic in the best way, and loved
+      more than this page could ever fully explain.
     </p>
   </div>
 </section>
 
 <section class="section final">
-  <h2>Ready to create one?</h2>
-  <p>This is just a demo. Your real page would be customized with your own photos, videos, music, memories, and message.</p>
+  <h2>The world is better because you’re in it.</h2>
+  <p>Happy 30th Birthday, Emily ❤️</p>
   <br>
-  <a class="btn primary" href="../index.html#pricing">Start a Celebration</a>
+  <a class="btn primary" href="../index.html#pricing">Create One Like This</a>
 </section>
 
 <footer>

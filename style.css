@@ -1201,6 +1201,19 @@ footer {
   transform: none;
 }
 
+.reveal-ready .reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s ease;
+}
+
+.reveal-ready .reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 
 /* ==================================================
    TABLET

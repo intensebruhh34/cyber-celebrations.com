@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="theme-color"
+    content="#19001f">
+
+  <title>Happy 10th Birthday Evalynn!</title>
+
+  <style>
+
+    /* =========================================
+       RESET
+    ========================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family: Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(
+          circle at top left,
+          rgba(255, 0, 72, 0.25),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at top right,
+          rgba(126, 40, 255, 0.28),
+          transparent 40%
+        ),
+        #100014;
+      color: white;
+      line-height: 1.6;
+    }
+
+    body.locked {
+      overflow: hidden;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    button,
+    a {
+      font: inherit;
+    }
+
+    button {
+      border: none;
+    }
+
+    ::selection {
+      background: #ff2d87;
+      color: white;
+    }
+
+
+    /* =========================================
+       OPENING SCREEN
+    ========================================= */
+
+    .opening-screen {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 25px;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(155, 59, 255, 0.28),
+          transparent 35%
+        ),
+        linear-gradient(
+          145deg,
+          #09000d,
+          #23002f 55%,
+          #35000e
+        );
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    }
+
+    .opening-screen.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-content {
+      position: relative;
+      z-index: 5;
+      width: min(760px, 100%);
+      text-align: center;
+    }
+
+    .opening-mini {
+      margin-bottom: 18px;
+      color: #ff5b99;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .opening-content h1 {
+      font-size: clamp(3.4rem, 12vw, 7.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+
+    .opening-content h1 span {
+      display: block;
+      margin-top: 12px;
+      background: linear-gradient(
+        135deg,
+        #ff2d69,
+        #ff67c7,
+        #a978ff
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .opening-copy {
+      width: min(560px, 100%);
+      margin: 28px auto 32px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 1.08rem;
+    }
+
+    .enter-button {
+      display: inline-flex;
+      min-height: 56px;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 30px;
+      cursor: pointer;
+      border-radius: 999px;
+      background: linear-gradient(
+        135deg,
+        #ff214f,
+        #7b42ff
+      );
+      box-shadow:
+        0 16px 50px rgba(255, 33, 79, 0.3),
+        0 0 60px rgba(123, 66, 255, 0.16);
+      color: white;
+      font-weight: 900;
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .enter-button:hover {
+      transform: translateY(-4px) scale(1.02);
+      box-shadow:
+        0 20px 60px rgba(255, 33, 79, 0.42),
+        0 0 70px rgba(123, 66, 255, 0.25);
+    }
+
+    .opening-warning {
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.38);
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+
+    /* =========================================
+       FLOATING BACKGROUND PIECES
+    ========================================= */
+
+    .floating-symbol {
+      position: absolute;
+      z-index: 1;
+      pointer-events: none;
+      animation: floatSymbol 7s ease-in-out infinite;
+    }
+
+    .symbol-one {
+      top: 12%;
+      left: 8%;
+      font-size: 2rem;
+    }
+
+    .symbol-two {
+      top: 18%;
+      right: 9%;
+      font-size: 2.5rem;
+      animation-delay: -2s;
+    }
+
+    .symbol-three {
+      bottom: 15%;
+      left: 15%;
+      font-size: 2.2rem;
+      animation-delay: -4s;
+    }
+
+    .symbol-four {
+      right: 17%;
+      bottom: 12%;
+      font-size: 2rem;
+      animation-delay: -1s;
+    }
+
+    @keyframes floatSymbol {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-5deg);
+      }
+
+      50% {
+        transform: translateY(-22px) rotate(7deg);
+      }
+    }
+
+
+    /* =========================================
+       SHARED
+    ========================================= */
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .page-section {
+      padding: 105px 7%;
+    }
+
+    .section-label {
+      margin-bottom: 15px;
+      color: #ff5b99;
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      width: min(850px, 100%);
+      margin-bottom: 50px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .section-heading p:last-child {
+      width: min(650px, 100%);
+      margin-top: 22px;
+      color: rgba(255, 255, 255, 0.68);
+      font-size: 1.07rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition:
+        opacity 0.85s ease,
+        transform 0.85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .photo-frame {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.06);
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.33),
+        0 0 55px rgba(126, 40, 255, 0.08);
+    }
+
+    .photo-frame img {
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.7s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.04);
+    }
+
+
+    /* =========================================
+       HERO
+    ========================================= */
+
+    .hero {
+      display: flex;
+      min-height: 100vh;
+      align-items: center;
+      padding: 115px 7%;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(8, 0, 12, 0.08),
+          #100014 95%
+        );
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      width: 100%;
+      grid-template-columns: 1fr 0.88fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-size: clamp(4rem, 10vw, 8.5rem);
+      line-height: 0.87;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+      margin-top: 13px;
+      background: linear-gradient(
+        135deg,
+        #ff264f,
+        #ff65c2 48%,
+        #a47aff
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      width: min(600px, 100%);
+      margin: 30px 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: clamp(1.08rem, 2.3vw, 1.35rem);
+    }
+
+    .double-digits {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 17px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.06);
+      color: rgba(255, 255, 255, 0.87);
+      font-size: 0.9rem;
+      font-weight: 900;
+    }
+
+    .hero-photo {
+      height: min(680px, 72vh);
+      transform: rotate(2deg);
+    }
+
+    .hero-photo::before {
+      position: absolute;
+      inset: -25px;
+      z-index: -1;
+      border-radius: 45px;
+      background: linear-gradient(
+        145deg,
+        rgba(255, 43, 91, 0.34),
+        rgba(126, 40, 255, 0.28)
+      );
+      content: "";
+      filter: blur(35px);
+    }
+
+    .hero-ten {
+      position: absolute;
+      right: -8%;
+      bottom: -4%;
+      z-index: 2;
+      color: rgba(255, 255, 255, 0.1);
+      font-size: clamp(8rem, 22vw, 18rem);
+      font-weight: 900;
+      line-height: 0.8;
+      letter-spacing: -0.08em;
+    }
+
+    .hero-balloon {
+      position: absolute;
+      z-index: 3;
+      font-size: 3rem;
+      animation: balloonFloat 5s ease-in-out infinite;
+    }
+
+    .balloon-one {
+      top: 12%;
+      right: 5%;
+    }
+
+    .balloon-two {
+      bottom: 12%;
+      left: 3%;
+      animation-delay: -2s;
+    }
+
+    @keyframes balloonFloat {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-4deg);
+      }
+
+      50% {
+        transform: translateY(-28px) rotate(5deg);
+      }
+    }
+
+
+    /* =========================================
+       GROWING UP
+    ========================================= */
+
+    .growing-section {
+      background:
+        linear-gradient(
+          180deg,
+          #100014,
+          #19001f
+        );
+    }
+
+    .growing-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .memory-card {
+      position: relative;
+    }
+
+    .memory-card:nth-child(odd) {
+      transform: translateY(25px);
+    }
+
+    .memory-card .photo-frame {
+      height: 390px;
+      border-radius: 24px;
+    }
+
+    .memory-caption {
+      margin-top: 15px;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.9rem;
+      font-weight: 800;
+      text-align: center;
+    }
+
+
+    /* =========================================
+       UPSIDE DOWN
+    ========================================= */
+
+    .upside-down {
+      min-height: 110vh;
+      overflow: hidden;
+      padding: 120px 7%;
+      background:
+        linear-gradient(
+          rgba(20, 0, 24, 0.28),
+          rgba(5, 0, 8, 0.92)
+        ),
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(255, 0, 49, 0.22),
+          transparent 35%
+        ),
+        #060009;
+    }
+
+    .upside-down::before {
+      position: absolute;
+      inset: 0;
+      background:
+        repeating-linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.018) 0,
+          rgba(255, 255, 255, 0.018) 1px,
+          transparent 1px,
+          transparent 5px
+        );
+      content: "";
+      pointer-events: none;
+    }
+
+    .upside-title {
+      position: relative;
+      z-index: 3;
+      margin-bottom: 55px;
+      text-align: center;
+    }
+
+    .upside-title p {
+      color: #ff2848;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+    }
+
+    .upside-title h2 {
+      margin-top: 15px;
+      color: #f5ebec;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.4rem, 9vw, 8rem);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.05em;
+      text-shadow:
+        0 0 10px rgba(255, 0, 45, 0.75),
+        0 0 35px rgba(255, 0, 45, 0.45);
+      text-transform: uppercase;
+    }
+
+    .upside-title h2 span {
+      display: block;
+      margin-top: 15px;
+      font-size: 0.42em;
+      letter-spacing: 0.2em;
+    }
+
+    .upside-grid {
+      position: relative;
+      z-index: 3;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .upside-grid .photo-frame {
+      height: 440px;
+      border-color: rgba(255, 23, 66, 0.28);
+      box-shadow:
+        0 25px 80px rgba(0, 0, 0, 0.55),
+        0 0 45px rgba(255, 0, 45, 0.12);
+    }
+
+    .upside-grid .photo-frame:nth-child(2) {
+      transform: translateY(40px);
+    }
+
+    .upside-message {
+      position: relative;
+      z-index: 3;
+      width: min(760px, 100%);
+      margin: 95px auto 0;
+      text-align: center;
+    }
+
+    .upside-message h3 {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.06;
+    }
+
+    .upside-message p {
+      margin-top: 20px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .light-string {
+      position: absolute;
+      top: 28px;
+      left: 0;
+      z-index: 2;
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      padding: 0 4%;
+    }
+
+    .bulb {
+      width: 15px;
+      height: 24px;
+      border-radius: 50% 50% 45% 45%;
+      box-shadow: 0 0 18px currentColor;
+      animation: blinkBulb 1.8s ease-in-out infinite;
+    }
+
+    .bulb:nth-child(1),
+    .bulb:nth-child(5),
+    .bulb:nth-child(9) {
+      background: red;
+      color: red;
+    }
+
+    .bulb:nth-child(2),
+    .bulb:nth-child(6),
+    .bulb:nth-child(10) {
+      background: #814bff;
+      color: #814bff;
+      animation-delay: -0.5s;
+    }
+
+    .bulb:nth-child(3),
+    .bulb:nth-child(7) {
+      background: #ffda2e;
+      color: #ffda2e;
+      animation-delay: -1s;
+    }
+
+    .bulb:nth-child(4),
+    .bulb:nth-child(8) {
+      background: #3fff9a;
+      color: #3fff9a;
+      animation-delay: -1.4s;
+    }
+
+    @keyframes blinkBulb {
+      0%,
+      100% {
+        opacity: 0.35;
+      }
+
+      50% {
+        opacity: 1;
+      }
+    }
+
+
+    /* =========================================
+       FAVORITES
+    ========================================= */
+
+    .favorites-section {
+      background:
+        radial-gradient(
+          circle at 70% 20%,
+          rgba(126, 40, 255, 0.16),
+          transparent 35%
+        ),
+        #17001d;
+    }
+
+    .favorites-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .favorites-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .favorites-photo-grid .photo-frame {
+      height: 310px;
+    }
+
+    .favorites-photo-grid .photo-frame:first-child {
+      grid-column: 1 / -1;
+      height: 390px;
+    }
+
+    .favorites-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .favorite-card {
+      min-height: 140px;
+      padding: 23px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 23px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.08),
+          rgba(255, 255, 255, 0.025)
+        );
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .favorite-card:hover {
+      border-color: rgba(255, 91, 153, 0.35);
+      transform: translateY(-5px);
+    }
+
+    .favorite-card span {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 1.75rem;
+    }
+
+    .favorite-card h3 {
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .favorite-card p {
+      color: rgba(255, 255, 255, 0.56);
+      font-size: 0.88rem;
+    }
+
+
+    /* =========================================
+       IMPORTANT FACTS
+    ========================================= */
+
+    .facts-section {
+      padding: 120px 7%;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          130deg,
+          #ff294f,
+          #8a3fff
+        );
+    }
+
+    .facts-section::before {
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(
+          rgba(255, 255, 255, 0.15) 2px,
+          transparent 2px
+        );
+      background-size: 45px 45px;
+      content: "";
+      opacity: 0.35;
+    }
+
+    .facts-content {
+      position: relative;
+      z-index: 3;
+    }
+
+    .facts-heading {
+      margin-bottom: 50px;
+      text-align: center;
+    }
+
+    .facts-heading p {
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .facts-heading h2 {
+      margin-top: 10px;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .fact-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-bottom: 35px;
+    }
+
+    .fact-photo-grid .photo-frame {
+      height: 390px;
+      border-color: rgba(255, 255, 255, 0.26);
+    }
+
+    .fact-photo-grid .photo-frame:nth-child(2) {
+      transform: translateY(25px);
+    }
+
+    .fact-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+      margin-top: 55px;
+    }
+
+    .fact-card {
+      padding: 28px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 24px;
+      background: rgba(8, 0, 15, 0.22);
+      backdrop-filter: blur(12px);
+      text-align: center;
+    }
+
+    .fact-card span {
+      display: block;
+      margin-bottom: 14px;
+      font-size: 2.2rem;
+    }
+
+    .fact-card h3 {
+      font-size: 1.2rem;
+    }
+
+    .fact-card p {
+      margin-top: 8px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================
+       TEN MOMENT
+    ========================================= */
+
+    .ten-section {
+      display: flex;
+      min-height: 105vh;
+      align-items: center;
+      justify-content: center;
+      padding: 110px 7%;
+      overflow: hidden;
+      background:
+        radial-gradient(
+          circle at 50% 45%,
+          rgba(255, 35, 103, 0.2),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 50% 55%,
+          rgba(121, 63, 255, 0.24),
+          transparent 55%
+        ),
+        #09000d;
+    }
+
+    .ten-content {
+      position: relative;
+      z-index: 4;
+      text-align: center;
+    }
+
+    .giant-ten {
+      background: linear-gradient(
+        150deg,
+        #ff3153,
+        #ff7bc8 48%,
+        #8b6fff
+      );
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-size: clamp(11rem, 38vw, 31rem);
+      font-weight: 900;
+      line-height: 0.72;
+      letter-spacing: -0.11em;
+      text-shadow: 0 0 90px rgba(255, 45, 115, 0.1);
+    }
+
+    .ten-content h2 {
+      margin-top: 35px;
+      font-size: clamp(2.4rem, 6vw, 5rem);
+      letter-spacing: -0.05em;
+    }
+
+    .ten-content p {
+      width: min(620px, 100%);
+      margin: 22px auto 0;
+      color: rgba(255, 255, 255, 0.67);
+      font-size: 1.08rem;
+    }
+
+    .ten-star {
+      position: absolute;
+      z-index: 2;
+      font-size: 1.8rem;
+      animation: twinkle 2s ease-in-out infinite;
+    }
+
+    .star-1 {
+      top: 14%;
+      left: 13%;
+    }
+
+    .star-2 {
+      top: 19%;
+      right: 15%;
+      animation-delay: -0.5s;
+    }
+
+    .star-3 {
+      bottom: 20%;
+      left: 18%;
+      animation-delay: -1s;
+    }
+
+    .star-4 {
+      right: 20%;
+      bottom: 15%;
+      animation-delay: -1.4s;
+    }
+
+    .star-5 {
+      top: 50%;
+      left: 6%;
+      animation-delay: -0.8s;
+    }
+
+    .star-6 {
+      top: 45%;
+      right: 7%;
+      animation-delay: -1.7s;
+    }
+
+    @keyframes twinkle {
+      0%,
+      100% {
+        opacity: 0.35;
+        transform: scale(0.8) rotate(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: scale(1.25) rotate(15deg);
+      }
+    }
+
+
+    /* =========================================
+       FINAL PHOTOS
+    ========================================= */
+
+    .final-photos {
+      padding: 120px 7%;
+      background:
+        linear-gradient(
+          180deg,
+          #09000d,
+          #19001f
+        );
+    }
+
+    .final-photo-layout {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .final-photo-layout .photo-frame:first-child {
+      height: 500px;
+    }
+
+    .final-photo-layout .photo-frame:last-child {
+      height: 650px;
+    }
+
+    .final-message {
+      width: min(800px, 100%);
+      margin: 80px auto 0;
+      text-align: center;
+    }
+
+    .final-message h2 {
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .final-message h2 span {
+      display: block;
+      margin-top: 10px;
+      color: #ff67bd;
+    }
+
+    .final-message p {
+      width: min(620px, 100%);
+      margin: 24px auto 0;
+      color: rgba(255, 255, 255, 0.65);
+    }
+
+
+    /* =========================================
+       BYE VIDEO
+    ========================================= */
+
+    .bye-section {
+      min-height: 100vh;
+      padding: 115px 7%;
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(124, 45, 255, 0.18),
+          transparent 45%
+        ),
+        #060009;
+      text-align: center;
+    }
+
+    .bye-heading {
+      margin-bottom: 45px;
+    }
+
+    .bye-heading p {
+      color: #ff5b99;
+      font-size: 0.75rem;
+      font-weight: 900;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .bye-heading h2 {
+      margin-top: 12px;
+      font-size: clamp(3rem, 8vw, 7rem);
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .video-wrap {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 30px;
+      background: #000000;
+      box-shadow:
+        0 35px 100px rgba(0, 0, 0, 0.5),
+        0 0 70px rgba(133, 63, 255, 0.14);
+    }
+
+    .video-wrap video {
+      max-height: 72vh;
+      background: black;
+    }
+
+    .bye-after {
+      margin-top: 45px;
+      font-size: clamp(3rem, 10vw, 8rem);
+      font-weight: 900;
+      letter-spacing: -0.07em;
+    }
+
+    .bye-after span {
+      display: inline-block;
+      animation: byeBounce 1.5s ease-in-out infinite;
+    }
+
+    @keyframes byeBounce {
+      0%,
+      100% {
+        transform: translateY(0) rotate(-3deg);
+      }
+
+      50% {
+        transform: translateY(-12px) rotate(4deg);
+      }
+    }
+
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    footer {
+      padding: 55px 7% 35px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      background: #050007;
+      text-align: center;
+    }
+
+    .footer-big {
+      color: white;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .footer-small {
+      margin-top: 9px;
+      color: rgba(255, 255, 255, 0.4);
+      font-size: 0.78rem;
+    }
+
+    .footer-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: #ff6ac0;
+      font-size: 0.82rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+
+    /* =========================================
+       POPCORN EASTER EGG
+    ========================================= */
+
+    .popcorn-easter-egg {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      display: flex;
+      width: 58px;
+      height: 58px;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 50%;
+      background: rgba(20, 0, 30, 0.82);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      font-size: 1.6rem;
+      transition: transform 0.25s ease;
+    }
+
+    .popcorn-easter-egg:hover {
+      transform: scale(1.1) rotate(-7deg);
+    }
+
+    .popcorn-message {
+      position: fixed;
+      right: 18px;
+      bottom: 88px;
+      z-index: 101;
+      max-width: 240px;
+      padding: 15px 18px;
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 18px;
+      background: rgba(20, 0, 30, 0.94);
+      box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+      color: white;
+      font-size: 0.85rem;
+      font-weight: 800;
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(12px);
+      transition:
+        opacity 0.25s ease,
+        transform 0.25s ease;
+    }
+
+    .popcorn-message.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================
+       CONFETTI
+    ========================================= */
+
+    .confetti-piece {
+      position: fixed;
+      top: -20px;
+      z-index: 999;
+      width: 10px;
+      height: 16px;
+      pointer-events: none;
+      animation: confettiFall linear forwards;
+    }
+
+    @keyframes confettiFall {
+      0% {
+        opacity: 1;
+        transform: translateY(-20px) rotate(0);
+      }
+
+      100% {
+        opacity: 0;
+        transform: translateY(110vh) rotate(720deg);
+      }
+    }
+
+
+    /* =========================================
+       TABLET
+    ========================================= */
+
+    @media (max-width: 1000px) {
+
+      .hero-grid,
+      .favorites-layout,
+      .final-photo-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo {
+        height: 650px;
+      }
+
+      .growing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .upside-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .upside-grid .photo-frame {
+        height: 560px;
+      }
+
+      .upside-grid .photo-frame:nth-child(2) {
+        transform: none;
+      }
+
+      .favorites-photo-grid {
+        order: 2;
+      }
+
+      .favorites-copy {
+        order: 1;
+      }
+
+      .fact-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .fact-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .fact-photo-grid .photo-frame {
+        height: 560px;
+      }
+
+      .fact-photo-grid .photo-frame:nth-child(2) {
+        transform: none;
+      }
+
+      .final-photo-layout .photo-frame:first-child,
+      .final-photo-layout .photo-frame:last-child {
+        height: 600px;
+      }
+
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 700px) {
+
+      .page-section {
+        padding: 85px 6%;
+      }
+
+      .opening-content h1 {
+        font-size: 3.8rem;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 95px 6% 90px;
+      }
+
+      .hero-grid {
+        gap: 45px;
+      }
+
+      .hero-copy h1 {
+        font-size: 4.5rem;
+      }
+
+      .hero-photo {
+        height: 520px;
+        transform: none;
+      }
+
+      .hero-ten {
+        right: -3%;
+        bottom: 1%;
+      }
+
+      .growing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .memory-card:nth-child(odd) {
+        transform: none;
+      }
+
+      .memory-card .photo-frame {
+        height: 500px;
+      }
+
+      .upside-down {
+        padding: 100px 6%;
+      }
+
+      .upside-grid .photo-frame {
+        height: 500px;
+      }
+
+      .favorites-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .favorites-photo-grid .photo-frame:first-child {
+        grid-column: auto;
+      }
+
+      .favorites-photo-grid .photo-frame,
+      .favorites-photo-grid .photo-frame:first-child {
+        height: 500px;
+      }
+
+      .favorites-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .fact-photo-grid .photo-frame {
+        height: 500px;
+      }
+
+      .fact-cards {
+        margin-top: 35px;
+      }
+
+      .giant-ten {
+        font-size: 14rem;
+      }
+
+      .final-photo-layout .photo-frame:first-child,
+      .final-photo-layout .photo-frame:last-child {
+        height: 520px;
+      }
+
+      .bye-section {
+        padding: 95px 6%;
+      }
+
+      .popcorn-easter-egg {
+        width: 52px;
+        height: 52px;
+      }
+
+    }
+
+
+    /* =========================================
+       SMALL PHONES
+    ========================================= */
+
+    @media (max-width: 420px) {
+
+      .hero-copy h1 {
+        font-size: 3.8rem;
+      }
+
+      .hero-photo,
+      .memory-card .photo-frame,
+      .upside-grid .photo-frame,
+      .favorites-photo-grid .photo-frame,
+      .favorites-photo-grid .photo-frame:first-child,
+      .fact-photo-grid .photo-frame,
+      .final-photo-layout .photo-frame:first-child,
+      .final-photo-layout .photo-frame:last-child {
+        height: 430px;
+      }
+
+      .giant-ten {
+        font-size: 11rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body class="locked">
+
+
+  <!-- =========================================
+       OPENING SCREEN
+  ========================================= -->
+
+  <div class="opening-screen" id="openingScreen">
+
+    <div class="floating-symbol symbol-one">⭐</div>
+    <div class="floating-symbol symbol-two">🎈</div>
+    <div class="floating-symbol symbol-three">🍿</div>
+    <div class="floating-symbol symbol-four">✨</div>
+
+    <div class="opening-content">
+
+      <p class="opening-mini">
+        A birthday experience made just for
+      </p>
+
+      <h1>
+        Happy Birthday
+        <span>Evalynn!</span>
+      </h1>
+
+      <p class="opening-copy">
+        Something awesome is waiting for you.
+        Tap below when you’re ready to enter double digits.
+      </p>
+
+      <button
+        class="enter-button"
+        id="enterButton">
+
+        Enter the Celebration 🎉
+
+      </button>
+
+      <p class="opening-warning">
+        Warning: excessive awesomeness ahead
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================
+       POPCORN EASTER EGG
+  ========================================= -->
+
+  <button
+    class="popcorn-easter-egg"
+    id="popcornButton"
+    aria-label="Open popcorn surprise">
+
+    🍿
+
+  </button>
+
+  <div
+    class="popcorn-message"
+    id="popcornMessage">
+
+    Official snack of being 10 and awesome.
+
+  </div>
+
+
+
+  <main>
+
+
+    <!-- =========================================
+         HERO — PHOTO 1
+    ========================================= -->
+
+    <section class="hero">
+
+      <div class="hero-balloon balloon-one">
+        🎈
+      </div>
+
+      <div class="hero-balloon balloon-two">
+        🎈
+      </div>
+
+      <div class="hero-grid">
+
+        <div class="hero-copy reveal">
+
+          <p class="section-label">
+            Double digits unlocked
+          </p>
+
+          <h1>
+            Evalynn
+            <span>is turning 10!</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Ten years of laughs, energy, weirdness,
+            memories, and making life way more fun.
+          </p>
+
+          <div class="double-digits">
+            ✨ Double digits look good on you
+          </div>
+
+        </div>
+
+
+        <div class="photo-frame hero-photo reveal">
+
+          <img
+            src="Evalynn1.jpg"
+            alt="Evalynn">
+
+          <div class="hero-ten">
+            10
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         GROWING UP — PHOTOS 2–5
+    ========================================= -->
+
+    <section class="page-section growing-section">
+
+      <div class="section-heading reveal">
+
+        <p class="section-label">
+          Ten years in the making
+        </p>
+
+        <h2>
+          From tiny human to total legend.
+        </h2>
+
+        <p>
+          Somehow, every year keeps getting more fun,
+          more hilarious, and more Evalynn.
+        </p>
+
+      </div>
+
+
+      <div class="growing-grid">
+
+        <article class="memory-card reveal">
+
+          <div class="photo-frame">
+            <img
+              src="Evalynn2.jpg"
+              alt="A memory of Evalynn">
+          </div>
+
+          <p class="memory-caption">
+            Tiny human. Huge personality.
+          </p>
+
+        </article>
+
+
+        <article class="memory-card reveal">
+
+          <div class="photo-frame">
+            <img
+              src="Evalynn3.jpg"
+              alt="A memory of Evalynn">
+          </div>
+
+          <p class="memory-caption">
+            Already running the place.
+          </p>
+
+        </article>
+
+
+        <article class="memory-card reveal">
+
+          <div class="photo-frame">
+            <img
+              src="Evalynn4.jpg"
+              alt="A memory of Evalynn">
+          </div>
+
+          <p class="memory-caption">
+            Professional memory maker.
+          </p>
+
+        </article>
+
+
+        <article class="memory-card reveal">
+
+          <div class="photo-frame">
+            <img
+              src="Evalynn5.jpg"
+              alt="A memory of Evalynn">
+          </div>
+
+          <p class="memory-caption">
+            The legend continues.
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         STRANGER THINGS — PHOTOS 6–8
+    ========================================= -->
+
+    <section class="upside-down">
+
+      <div class="light-string" aria-hidden="true">
+
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+        <span class="bulb"></span>
+
+      </div>
+
+
+      <div class="upside-title reveal">
+
+        <p>
+          Entering another dimension
+        </p>
+
+        <h2>
+          The Upside Down
+          <span>Evalynn Edition</span>
+        </h2>
+
+      </div>
+
+
+      <div class="upside-grid">
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn6.jpg"
+            alt="Evalynn">
+        </div>
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn7.jpg"
+            alt="Evalynn">
+        </div>
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn8.jpg"
+            alt="Evalynn">
+        </div>
+
+      </div>
+
+
+      <div class="upside-message reveal">
+
+        <h3>
+          Honestly, even the Upside Down would be more fun with you in it.
+        </h3>
+
+        <p>
+          Monsters might be scary—but they have never
+          faced Evalynn after a Sprite and a slushie.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FAVORITES — PHOTOS 9–11
+    ========================================= -->
+
+    <section class="page-section favorites-section">
+
+      <div class="favorites-layout">
+
+
+        <div class="favorites-photo-grid">
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn9.jpg"
+              alt="Evalynn">
+          </div>
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn10.jpg"
+              alt="Evalynn">
+          </div>
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn11.jpg"
+              alt="Evalynn">
+          </div>
+
+        </div>
+
+
+        <div class="favorites-copy">
+
+          <div class="section-heading reveal">
+
+            <p class="section-label">
+              The official Evalynn starter pack
+            </p>
+
+            <h2>
+              A few favorite things.
+            </h2>
+
+          </div>
+
+
+          <div class="favorites-cards">
+
+            <article class="favorite-card reveal">
+              <span>❤️💜</span>
+              <h3>Favorite colors</h3>
+              <p>Red and purple</p>
+            </article>
+
+            <article class="favorite-card reveal">
+              <span>🍿</span>
+              <h3>Favorite snack</h3>
+              <p>Popcorn... and apparently boogers</p>
+            </article>
+
+            <article class="favorite-card reveal">
+              <span>🥤</span>
+              <h3>Favorite drink</h3>
+              <p>Sprite and slushies</p>
+            </article>
+
+            <article class="favorite-card reveal">
+              <span>📺</span>
+              <h3>Favorite show</h3>
+              <p>Stranger Things</p>
+            </article>
+
+            <article class="favorite-card reveal">
+              <span>🎵</span>
+              <h3>Favorite song</h3>
+              <p>Running Up That Hill</p>
+            </article>
+
+            <article class="favorite-card reveal">
+              <span>🍂</span>
+              <h3>Favorite season</h3>
+              <p>Fall</p>
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FUNNY FACTS — PHOTOS 12–14
+    ========================================= -->
+
+    <section class="facts-section">
+
+      <div class="facts-content">
+
+        <div class="facts-heading reveal">
+
+          <p>
+            Highly important information
+          </p>
+
+          <h2>
+            Official Evalynn Facts
+          </h2>
+
+        </div>
+
+
+        <div class="fact-photo-grid">
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn12.jpg"
+              alt="Evalynn">
+          </div>
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn13.jpg"
+              alt="Evalynn">
+          </div>
+
+          <div class="photo-frame reveal">
+            <img
+              src="Evalynn14.jpg"
+              alt="Evalynn">
+          </div>
+
+        </div>
+
+
+        <div class="fact-cards">
+
+          <article class="fact-card reveal">
+
+            <span>😂</span>
+
+            <h3>
+              Elite Sense of Humor
+            </h3>
+
+            <p>
+              Dumb poop jokes work every single time.
+            </p>
+
+          </article>
+
+
+          <article class="fact-card reveal">
+
+            <span>🍕</span>
+
+            <h3>
+              Greatest Strength
+            </h3>
+
+            <p>
+              The ability to eat basically everything.
+            </p>
+
+          </article>
+
+
+          <article class="fact-card reveal">
+
+            <span>🤪</span>
+
+            <h3>
+              Weird Habit
+            </h3>
+
+            <p>
+              Weird is not the habit. Weird is the lifestyle.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         TURNING 10 — PHOTO 15
+    ========================================= -->
+
+    <section class="ten-section">
+
+      <span class="ten-star star-1">⭐</span>
+      <span class="ten-star star-2">✨</span>
+      <span class="ten-star star-3">⭐</span>
+      <span class="ten-star star-4">✨</span>
+      <span class="ten-star star-5">⭐</span>
+      <span class="ten-star star-6">✨</span>
+
+      <div class="ten-content reveal">
+
+        <div class="giant-ten">
+          10
+        </div>
+
+        <h2>
+          Ten years of being completely unforgettable.
+        </h2>
+
+        <p>
+          Ten years of laughter, energy, adventures,
+          personality, and making the people around you smile.
+          The world is better—and a lot more fun—with Evalynn in it.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         PHOTO 15 FEATURE
+    ========================================= -->
+
+    <section class="page-section growing-section">
+
+      <div class="section-heading reveal">
+
+        <p class="section-label">
+          Best energy award
+        </p>
+
+        <h2>
+          Some people walk into a room.
+          Evalynn brings the whole vibe.
+        </h2>
+
+      </div>
+
+      <div
+        class="photo-frame reveal"
+        style="
+          width:min(850px, 100%);
+          height:min(720px, 75vh);
+          margin:0 auto;
+        ">
+
+        <img
+          src="Evalynn15.jpg"
+          alt="Evalynn">
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FINAL PHOTOS — PHOTOS 16–17
+    ========================================= -->
+
+    <section class="final-photos">
+
+      <div class="final-photo-layout">
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn16.jpg"
+            alt="Evalynn">
+        </div>
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn17.jpg"
+            alt="Evalynn">
+        </div>
+
+      </div>
+
+
+      <div class="final-message reveal">
+
+        <p class="section-label">
+          One very important reminder
+        </p>
+
+        <h2>
+          You’re only turning 10 once.
+          <span>So make it legendary.</span>
+        </h2>
+
+        <p>
+          Keep laughing at dumb jokes. Keep bringing
+          the best energy. Keep being weird, funny,
+          strong, and completely yourself.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         FINAL PHOTOS — PHOTOS 18–19
+    ========================================= -->
+
+    <section class="page-section favorites-section">
+
+      <div class="section-heading reveal">
+
+        <p class="section-label">
+          Chapter ten begins now
+        </p>
+
+        <h2>
+          More adventures.
+          More memories.
+          More Evalynn.
+        </h2>
+
+      </div>
+
+
+      <div
+        class="final-photo-layout"
+        style="align-items:stretch;">
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn18.jpg"
+            alt="Evalynn">
+        </div>
+
+        <div class="photo-frame reveal">
+          <img
+            src="Evalynn19.jpg"
+            alt="Evalynn">
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================================
+         BYE VIDEO
+    ========================================= -->
+
+    <section class="bye-section">
+
+      <div class="bye-heading reveal">
+
+        <p>
+          And now, one final message
+        </p>
+
+        <h2>
+          Happy 10th Birthday, Evalynn!
+        </h2>
+
+      </div>
+
+
+      <div class="video-wrap reveal">
+
+        <video
+          id="byeVideo"
+          controls
+          playsinline
+          preload="metadata">
+
+          <source
+            src="EvalynnBye.mp4"
+            type="video/mp4">
+
+          Your browser does not support the video.
+
+        </video>
+
+      </div>
+
+
+      <div class="bye-after reveal">
+
+        <span>BYE! 👋😂</span>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer>
+
+    <p class="footer-big">
+      Made with love by Cyber Celebrations
+    </p>
+
+    <p class="footer-small">
+      A one-of-a-kind celebration for a one-of-a-kind person.
+    </p>
+
+    <a
+      class="footer-link"
+      href="https://cyber-celebrations.com">
+
+      Create a Cyber Celebration
+
+    </a>
+
+  </footer>
+
+
+
+  <script>
+
+    /* =========================================
+       OPENING SCREEN
+    ========================================= */
+
+    const openingScreen =
+      document.getElementById("openingScreen");
+
+    const enterButton =
+      document.getElementById("enterButton");
+
+    enterButton.addEventListener("click", () => {
+      openingScreen.classList.add("hidden");
+      document.body.classList.remove("locked");
+
+      launchConfetti(110);
+
+      setTimeout(() => {
+        openingScreen.style.display = "none";
+      }, 900);
+    });
+
+
+    /* =========================================
+       SCROLL REVEAL
+    ========================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const revealObserver =
+        new IntersectionObserver(
+          (entries, observer) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -45px 0px"
+          }
+        );
+
+      revealElements.forEach((element, index) => {
+        element.style.transitionDelay =
+          `${Math.min(index % 3, 2) * 90}ms`;
+
+        revealObserver.observe(element);
+      });
+    } else {
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+    }
+
+
+    /* =========================================
+       POPCORN EASTER EGG
+    ========================================= */
+
+    const popcornButton =
+      document.getElementById("popcornButton");
+
+    const popcornMessage =
+      document.getElementById("popcornMessage");
+
+    let popcornTimeout;
+
+    popcornButton.addEventListener("click", () => {
+      popcornMessage.classList.add("show");
+      popcornButton.textContent = "✨";
+
+      launchConfetti(30);
+
+      clearTimeout(popcornTimeout);
+
+      popcornTimeout = setTimeout(() => {
+        popcornMessage.classList.remove("show");
+        popcornButton.textContent = "🍿";
+      }, 3000);
+    });
+
+
+    /* =========================================
+       CONFETTI
+    ========================================= */
+
+    function launchConfetti(amount = 80) {
+      const colors = [
+        "#ff214f",
+        "#ff58b3",
+        "#8c54ff",
+        "#ffffff",
+        "#ffd447"
+      ];
+
+      for (let i = 0; i < amount; i++) {
+        const piece =
+          document.createElement("div");
+
+        piece.className = "confetti-piece";
+
+        piece.style.left =
+          `${Math.random() * 100}vw`;
+
+        piece.style.background =
+          colors[Math.floor(Math.random() * colors.length)];
+
+        piece.style.animationDuration =
+          `${2.5 + Math.random() * 3}s`;
+
+        piece.style.animationDelay =
+          `${Math.random() * 0.6}s`;
+
+        piece.style.transform =
+          `rotate(${Math.random() * 360}deg)`;
+
+        piece.style.borderRadius =
+          Math.random() > 0.5 ? "50%" : "2px";
+
+        document.body.appendChild(piece);
+
+        setTimeout(() => {
+          piece.remove();
+        }, 6500);
+      }
+    }
+
+
+    /* =========================================
+       VIDEO ENDING
+    ========================================= */
+
+    const byeVideo =
+      document.getElementById("byeVideo");
+
+    byeVideo.addEventListener("ended", () => {
+      launchConfetti(90);
+
+      setTimeout(() => {
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: "smooth"
+        });
+      }, 400);
+    });
+
+  </script>
+
+</body>
+</html>

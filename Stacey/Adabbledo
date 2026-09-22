@@ -1,1 +1,2589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="theme-color"
+    content="#100b1d"
+  >
+
+  <title>Happy Birthday Stacey 💜</title>
+
+  <style>
+
+    /* =========================================================
+       RESET
+    ========================================================= */
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      overflow-x: hidden;
+      font-family:
+        Inter,
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background:
+        radial-gradient(
+          circle at 10% 0%,
+          rgba(171, 112, 255, 0.16),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 90% 10%,
+          rgba(255, 112, 174, 0.12),
+          transparent 30%
+        ),
+        #0b0812;
+
+      color: white;
+      line-height: 1.6;
+    }
+
+    body.locked {
+      overflow: hidden;
+    }
+
+    img,
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: #b66cff;
+      color: white;
+    }
+
+
+    /* =========================================================
+       SHARED
+    ========================================================= */
+
+    main {
+      overflow: hidden;
+    }
+
+    section {
+      position: relative;
+    }
+
+    .section {
+      padding: 110px 7%;
+    }
+
+    .eyebrow {
+      margin-bottom: 15px;
+
+      color: #d79aff;
+
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .heading {
+      width: min(850px, 100%);
+    }
+
+    .heading h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(2.8rem, 7vw, 6.2rem);
+      font-weight: 400;
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .heading p:last-child {
+      width: min(650px, 100%);
+      margin-top: 22px;
+
+      color: rgba(255, 255, 255, 0.66);
+
+      font-size: 1.05rem;
+    }
+
+    .photo {
+      position: relative;
+
+      overflow: hidden;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 30px;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      box-shadow:
+        0 30px 90px rgba(0, 0, 0, 0.35),
+        0 0 70px rgba(160, 90, 255, 0.05);
+    }
+
+    .photo img {
+      height: 100%;
+      object-fit: cover;
+
+      transition: transform 0.8s ease;
+    }
+
+    .photo:hover img {
+      transform: scale(1.035);
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+
+      transition:
+        opacity 0.85s ease,
+        transform 0.85s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+
+    /* =========================================================
+       OPENING
+    ========================================================= */
+
+    .opening {
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 25px;
+
+      overflow: hidden;
+
+      background:
+        radial-gradient(
+          circle at 50% 35%,
+          rgba(173, 101, 255, 0.25),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 25% 80%,
+          rgba(91, 188, 255, 0.14),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 75%,
+          rgba(255, 105, 174, 0.15),
+          transparent 30%
+        ),
+        #090611;
+
+      transition:
+        opacity 0.8s ease,
+        visibility 0.8s ease;
+    }
+
+    .opening.hidden {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .opening-content {
+      position: relative;
+      z-index: 5;
+
+      width: min(800px, 100%);
+
+      text-align: center;
+    }
+
+    .opening-small {
+      margin-bottom: 22px;
+
+      color: #d69bff;
+
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+    }
+
+    .opening h1 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(4.2rem, 13vw, 9rem);
+      font-weight: 400;
+      line-height: 0.84;
+      letter-spacing: -0.07em;
+    }
+
+    .opening h1 span {
+      display: block;
+
+      margin-top: 16px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #cf8fff,
+          #8ccfff 48%,
+          #ff8dc5
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .opening-copy {
+      width: min(570px, 100%);
+
+      margin:
+        30px auto
+        35px;
+
+      color: rgba(255, 255, 255, 0.68);
+
+      font-size: 1.08rem;
+    }
+
+    .enter-button {
+      display: inline-flex;
+
+      min-height: 57px;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 15px 32px;
+
+      cursor: pointer;
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 999px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #9d5cff,
+          #e66daf
+        );
+
+      box-shadow:
+        0 18px 60px rgba(157, 92, 255, 0.28);
+
+      color: white;
+
+      font-weight: 900;
+
+      transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+    }
+
+    .enter-button:hover {
+      transform: translateY(-4px);
+
+      box-shadow:
+        0 22px 70px rgba(157, 92, 255, 0.4);
+    }
+
+    .opening-note {
+      margin-top: 22px;
+
+      color: rgba(255, 255, 255, 0.35);
+
+      font-size: 0.73rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .orb {
+      position: absolute;
+
+      border-radius: 50%;
+
+      filter: blur(2px);
+
+      animation:
+        floatOrb
+        8s
+        ease-in-out
+        infinite;
+    }
+
+    .orb-one {
+      top: 12%;
+      left: 9%;
+
+      width: 10px;
+      height: 10px;
+
+      background: #d393ff;
+
+      box-shadow:
+        0 0 30px #d393ff;
+    }
+
+    .orb-two {
+      top: 20%;
+      right: 12%;
+
+      width: 8px;
+      height: 8px;
+
+      background: #87d5ff;
+
+      box-shadow:
+        0 0 28px #87d5ff;
+
+      animation-delay: -3s;
+    }
+
+    .orb-three {
+      bottom: 15%;
+      left: 20%;
+
+      width: 12px;
+      height: 12px;
+
+      background: #ff8dc5;
+
+      box-shadow:
+        0 0 30px #ff8dc5;
+
+      animation-delay: -5s;
+    }
+
+    @keyframes floatOrb {
+
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-25px);
+      }
+
+    }
+
+
+    /* =========================================================
+       HERO
+    ========================================================= */
+
+    .hero {
+      display: flex;
+
+      min-height: 100vh;
+
+      align-items: center;
+
+      padding: 105px 7%;
+
+      background:
+        radial-gradient(
+          circle at 70% 30%,
+          rgba(147, 82, 255, 0.18),
+          transparent 34%
+        ),
+        radial-gradient(
+          circle at 15% 70%,
+          rgba(89, 185, 255, 0.1),
+          transparent 30%
+        );
+    }
+
+    .hero-grid {
+      display: grid;
+
+      width: 100%;
+
+      grid-template-columns:
+        1fr
+        0.85fr;
+
+      gap: 75px;
+
+      align-items: center;
+    }
+
+    .hero-copy h1 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(5rem, 12vw, 10rem);
+      font-weight: 400;
+      line-height: 0.8;
+      letter-spacing: -0.075em;
+    }
+
+    .hero-copy h1 span {
+      display: block;
+
+      margin-top: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #c889ff,
+          #8ed6ff,
+          #ff94c7
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .hero-copy-text {
+      width: min(620px, 100%);
+
+      margin: 32px 0;
+
+      color: rgba(255, 255, 255, 0.68);
+
+      font-size: 1.13rem;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+
+      padding: 11px 17px;
+
+      border: 1px solid rgba(255, 255, 255, 0.13);
+      border-radius: 999px;
+
+      background: rgba(255, 255, 255, 0.05);
+
+      color: rgba(255, 255, 255, 0.82);
+
+      font-size: 0.88rem;
+      font-weight: 800;
+    }
+
+    .hero-photo {
+      height: min(720px, 76vh);
+
+      transform: rotate(1.8deg);
+    }
+
+    .hero-photo::before {
+      position: absolute;
+      inset: -25px;
+      z-index: -1;
+
+      border-radius: 45px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(183, 112, 255, 0.28),
+          rgba(101, 199, 255, 0.18),
+          rgba(255, 111, 176, 0.18)
+        );
+
+      content: "";
+
+      filter: blur(35px);
+    }
+
+
+    /* =========================================================
+       BEAUTIFUL STACEY
+    ========================================================= */
+
+    .beautiful {
+      background:
+        linear-gradient(
+          180deg,
+          #0b0812,
+          #130d20
+        );
+    }
+
+    .beautiful-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .beautiful-grid .photo {
+      height: 520px;
+    }
+
+    .beautiful-grid .photo:nth-child(2) {
+      transform: translateY(35px);
+    }
+
+    .beauty-copy {
+      width: min(800px, 100%);
+
+      margin: 90px auto 0;
+
+      text-align: center;
+    }
+
+    .beauty-copy h3 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(2.2rem, 5vw, 4.4rem);
+      font-weight: 400;
+      line-height: 1.05;
+    }
+
+    .beauty-copy p {
+      margin-top: 20px;
+
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+
+    /* =========================================================
+       FAVORITES
+    ========================================================= */
+
+    .favorites {
+      background:
+        radial-gradient(
+          circle at 15% 25%,
+          rgba(89, 190, 255, 0.11),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 80% 70%,
+          rgba(255, 109, 173, 0.1),
+          transparent 35%
+        ),
+        #100b1b;
+    }
+
+    .favorites-layout {
+      display: grid;
+
+      grid-template-columns:
+        0.9fr
+        1.1fr;
+
+      gap: 65px;
+
+      align-items: center;
+    }
+
+    .favorites-photo {
+      height: 680px;
+    }
+
+    .favorites-cards {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 14px;
+
+      margin-top: 40px;
+    }
+
+    .favorite-card {
+      min-height: 135px;
+
+      padding: 23px;
+
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 23px;
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 255, 255, 0.07),
+          rgba(255, 255, 255, 0.025)
+        );
+
+      transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+    }
+
+    .favorite-card:hover {
+      transform: translateY(-5px);
+
+      border-color:
+        rgba(204, 139, 255, 0.35);
+    }
+
+    .favorite-card span {
+      display: block;
+
+      margin-bottom: 12px;
+
+      font-size: 1.7rem;
+    }
+
+    .favorite-card h3 {
+      font-size: 0.98rem;
+    }
+
+    .favorite-card p {
+      margin-top: 5px;
+
+      color: rgba(255, 255, 255, 0.56);
+
+      font-size: 0.87rem;
+    }
+
+
+    /* =========================================================
+       CHAOS / PERSONALITY
+    ========================================================= */
+
+    .chaos {
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          130deg,
+          #5d34a8,
+          #365f91 48%,
+          #a94478
+        );
+    }
+
+    .chaos::before {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          rgba(255, 255, 255, 0.12) 1.5px,
+          transparent 1.5px
+        );
+
+      background-size: 42px 42px;
+
+      content: "";
+
+      opacity: 0.35;
+    }
+
+    .chaos-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .chaos-heading {
+      width: min(900px, 100%);
+
+      margin-bottom: 55px;
+    }
+
+    .chaos-heading h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+    }
+
+    .chaos-heading p {
+      width: min(620px, 100%);
+
+      margin-top: 22px;
+
+      color: rgba(255, 255, 255, 0.76);
+    }
+
+    .chaos-photos {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 20px;
+    }
+
+    .chaos-photos .photo {
+      height: 600px;
+    }
+
+    .chaos-photos .photo:nth-child(2) {
+      transform: translateY(40px);
+    }
+
+    .chaos-cards {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 15px;
+
+      margin-top: 75px;
+    }
+
+    .chaos-card {
+      padding: 27px;
+
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 24px;
+
+      background:
+        rgba(5, 3, 15, 0.22);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .chaos-card span {
+      font-size: 2rem;
+    }
+
+    .chaos-card h3 {
+      margin-top: 13px;
+
+      font-size: 1.1rem;
+    }
+
+    .chaos-card p {
+      margin-top: 8px;
+
+      color: rgba(255, 255, 255, 0.72);
+
+      font-size: 0.9rem;
+    }
+
+
+    /* =========================================================
+       STRENGTH
+    ========================================================= */
+
+    .strength {
+      background:
+        #09070f;
+    }
+
+    .strength-layout {
+      display: grid;
+
+      grid-template-columns:
+        1fr
+        1fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .strength-photo {
+      height: 720px;
+    }
+
+    .strength-quote {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+      font-weight: 400;
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .strength-quote span {
+      background:
+        linear-gradient(
+          135deg,
+          #d595ff,
+          #8ed7ff,
+          #ff8dc4
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .strength-copy {
+      margin-top: 28px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 1.08rem;
+    }
+
+
+    /* =========================================================
+       WHEREVER YOU ARE
+    ========================================================= */
+
+    .wherever {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at 50% 30%,
+          rgba(82, 181, 255, 0.16),
+          transparent 35%
+        ),
+        #0c1018;
+    }
+
+    .wherever-layout {
+      display: grid;
+
+      width: 100%;
+
+      grid-template-columns:
+        1.05fr
+        0.95fr;
+
+      gap: 65px;
+
+      align-items: center;
+    }
+
+    .wherever-photo {
+      height: 680px;
+    }
+
+    .wherever h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3.1rem, 8vw, 7rem);
+      font-weight: 400;
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+    }
+
+    .wherever p {
+      width: min(570px, 100%);
+
+      margin-top: 28px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 1.08rem;
+    }
+
+
+    /* =========================================================
+       LIFE TOGETHER
+    ========================================================= */
+
+    .life {
+      background:
+        linear-gradient(
+          180deg,
+          #0c1018,
+          #120b19
+        );
+    }
+
+    .life-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+
+      margin-top: 55px;
+    }
+
+    .life-grid .photo {
+      height: 500px;
+    }
+
+    .life-grid .photo:nth-child(2) {
+      transform: translateY(30px);
+    }
+
+    .memory-list {
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 15px;
+
+      width: min(950px, 100%);
+
+      margin: 90px auto 0;
+    }
+
+    .memory {
+      padding: 26px;
+
+      border: 1px solid rgba(255, 255, 255, 0.09);
+      border-radius: 22px;
+
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .memory strong {
+      display: block;
+
+      margin-bottom: 7px;
+
+      color: #dba5ff;
+
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .memory p {
+      color: rgba(255, 255, 255, 0.7);
+    }
+
+
+    /* =========================================================
+       KIDS
+    ========================================================= */
+
+    .kids {
+      background:
+        radial-gradient(
+          circle at 50% 0%,
+          rgba(255, 113, 182, 0.14),
+          transparent 35%
+        ),
+        #100a17;
+    }
+
+    .kids-heading {
+      width: min(800px, 100%);
+
+      margin: 0 auto 60px;
+
+      text-align: center;
+    }
+
+    .kids-heading h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 400;
+      line-height: 0.95;
+      letter-spacing: -0.06em;
+    }
+
+    .kids-heading p:last-child {
+      width: min(600px, 100%);
+
+      margin: 22px auto 0;
+
+      color: rgba(255, 255, 255, 0.62);
+    }
+
+    .kids-photo {
+      width: min(850px, 100%);
+      height: 600px;
+
+      margin: 0 auto 70px;
+    }
+
+    .kid-videos {
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 18px;
+    }
+
+    .kid-video-card {
+      padding: 12px;
+
+      border: 1px solid rgba(255, 255, 255, 0.11);
+      border-radius: 26px;
+
+      background: rgba(255, 255, 255, 0.045);
+    }
+
+    .kid-video-card video {
+      aspect-ratio: 9 / 16;
+
+      max-height: 520px;
+
+      border-radius: 18px;
+
+      background: black;
+
+      object-fit: contain;
+    }
+
+    .kid-video-card p {
+      padding: 15px 5px 6px;
+
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 0.85rem;
+      font-weight: 800;
+
+      text-align: center;
+    }
+
+
+    /* =========================================================
+       HEARTFELT
+    ========================================================= */
+
+    .heartfelt {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      background:
+        radial-gradient(
+          circle at center,
+          rgba(151, 84, 255, 0.16),
+          transparent 40%
+        ),
+        #08060d;
+    }
+
+    .heartfelt-layout {
+      display: grid;
+
+      width: 100%;
+
+      grid-template-columns:
+        0.85fr
+        1.15fr;
+
+      gap: 70px;
+
+      align-items: center;
+    }
+
+    .heartfelt-photo {
+      height: 680px;
+    }
+
+    .heartfelt-copy h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3rem, 7vw, 6rem);
+      font-weight: 400;
+      line-height: 0.96;
+      letter-spacing: -0.055em;
+    }
+
+    .heartfelt-copy blockquote {
+      margin-top: 35px;
+      padding-left: 25px;
+
+      border-left: 2px solid #bd78ff;
+
+      color: rgba(255, 255, 255, 0.76);
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(1.3rem, 2.7vw, 1.8rem);
+      line-height: 1.55;
+    }
+
+    .heartfelt-copy .small-copy {
+      margin-top: 30px;
+
+      color: rgba(255, 255, 255, 0.55);
+    }
+
+
+    /* =========================================================
+       SECRET VIDEO
+    ========================================================= */
+
+    .secret {
+      min-height: 110vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 110px 7%;
+
+      background:
+        #030205;
+
+      text-align: center;
+    }
+
+    .secret-content {
+      width: min(900px, 100%);
+    }
+
+    .secret-intro {
+      margin-bottom: 55px;
+    }
+
+    .secret-intro p:first-child {
+      color: rgba(255, 255, 255, 0.4);
+
+      font-size: 0.74rem;
+      font-weight: 900;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    .secret-intro h2 {
+      margin-top: 18px;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3rem, 8vw, 6.8rem);
+      font-weight: 400;
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+    }
+
+    .secret-intro .secret-line {
+      width: min(640px, 100%);
+
+      margin: 28px auto 0;
+
+      color: rgba(255, 255, 255, 0.57);
+
+      font-size: 1.05rem;
+    }
+
+    .secret-video {
+      overflow: hidden;
+
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 28px;
+
+      background: black;
+
+      box-shadow:
+        0 35px 120px rgba(0, 0, 0, 0.8),
+        0 0 90px rgba(155, 91, 255, 0.08);
+    }
+
+    .secret-video video {
+      max-height: 78vh;
+
+      background: black;
+    }
+
+    .after-video {
+      margin-top: 55px;
+    }
+
+    .after-video p {
+      color: rgba(255, 255, 255, 0.5);
+
+      font-size: 0.95rem;
+    }
+
+
+    /* =========================================================
+       ENDING
+    ========================================================= */
+
+    .ending {
+      min-height: 95vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 110px 7%;
+
+      background:
+        radial-gradient(
+          circle at 50% 40%,
+          rgba(181, 107, 255, 0.18),
+          transparent 38%
+        ),
+        radial-gradient(
+          circle at 70% 70%,
+          rgba(255, 114, 178, 0.1),
+          transparent 30%
+        ),
+        #0b0711;
+
+      text-align: center;
+    }
+
+    .ending-content {
+      width: min(900px, 100%);
+
+      margin: auto;
+    }
+
+    .ending-photo {
+      width: min(580px, 100%);
+      height: 650px;
+
+      margin: 0 auto 60px;
+    }
+
+    .ending h2 {
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size: clamp(3.4rem, 9vw, 7.5rem);
+      font-weight: 400;
+      line-height: 0.9;
+      letter-spacing: -0.065em;
+    }
+
+    .ending h2 span {
+      display: block;
+
+      margin-top: 15px;
+
+      background:
+        linear-gradient(
+          135deg,
+          #ce8eff,
+          #8bd5ff,
+          #ff90c6
+        );
+
+      -webkit-background-clip: text;
+      background-clip: text;
+
+      color: transparent;
+    }
+
+    .ending-copy {
+      width: min(620px, 100%);
+
+      margin: 30px auto 0;
+
+      color: rgba(255, 255, 255, 0.63);
+
+      font-size: 1.08rem;
+    }
+
+
+    /* =========================================================
+       FOOTER
+    ========================================================= */
+
+    footer {
+      padding: 55px 7% 38px;
+
+      border-top:
+        1px solid
+        rgba(255, 255, 255, 0.07);
+
+      background: #040306;
+
+      text-align: center;
+    }
+
+    footer strong {
+      font-size: 0.98rem;
+    }
+
+    footer p {
+      margin-top: 8px;
+
+      color: rgba(255, 255, 255, 0.35);
+
+      font-size: 0.76rem;
+    }
+
+
+    /* =========================================================
+       MOBILE
+    ========================================================= */
+
+    @media (max-width: 950px) {
+
+      .hero-grid,
+      .favorites-layout,
+      .strength-layout,
+      .wherever-layout,
+      .heartfelt-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-photo,
+      .favorites-photo,
+      .strength-photo,
+      .wherever-photo,
+      .heartfelt-photo {
+        height: 650px;
+      }
+
+      .beautiful-grid,
+      .life-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .beautiful-grid .photo,
+      .life-grid .photo {
+        height: 600px;
+      }
+
+      .beautiful-grid .photo:nth-child(2),
+      .life-grid .photo:nth-child(2) {
+        transform: none;
+      }
+
+      .chaos-photos {
+        grid-template-columns: 1fr;
+      }
+
+      .chaos-photos .photo:nth-child(2) {
+        transform: none;
+      }
+
+      .chaos-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .kid-videos {
+        grid-template-columns: 1fr;
+      }
+
+      .kid-video-card {
+        width: min(520px, 100%);
+
+        margin: 0 auto;
+      }
+
+    }
+
+
+    @media (max-width: 700px) {
+
+      .section {
+        padding: 88px 6%;
+      }
+
+      .opening h1 {
+        font-size: 4.5rem;
+      }
+
+      .hero {
+        min-height: auto;
+
+        padding: 100px 6% 90px;
+      }
+
+      .hero-copy h1 {
+        font-size: 5rem;
+      }
+
+      .hero-photo,
+      .favorites-photo,
+      .strength-photo,
+      .wherever-photo,
+      .heartfelt-photo {
+        height: 530px;
+      }
+
+      .beautiful-grid .photo,
+      .life-grid .photo,
+      .chaos-photos .photo {
+        height: 500px;
+      }
+
+      .favorites-cards,
+      .memory-list {
+        grid-template-columns: 1fr;
+      }
+
+      .kids-photo {
+        height: 520px;
+      }
+
+      .ending-photo {
+        height: 550px;
+      }
+
+    }
+
+
+    @media (max-width: 430px) {
+
+      .opening h1 {
+        font-size: 3.8rem;
+      }
+
+      .hero-copy h1 {
+        font-size: 4.25rem;
+      }
+
+      .hero-photo,
+      .favorites-photo,
+      .strength-photo,
+      .wherever-photo,
+      .heartfelt-photo,
+      .beautiful-grid .photo,
+      .life-grid .photo,
+      .chaos-photos .photo,
+      .kids-photo {
+        height: 440px;
+      }
+
+      .ending-photo {
+        height: 470px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body class="locked">
+
+
+  <!-- =======================================================
+       OPENING
+  ======================================================== -->
+
+  <div
+    class="opening"
+    id="opening"
+  >
+
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+
+
+    <div class="opening-content">
+
+      <p class="opening-small">
+        This one's just for you
+      </p>
+
+      <h1>
+        Happy Birthday
+        <span>Stacey</span>
+      </h1>
+
+      <p class="opening-copy">
+        For the woman who somehow manages to be
+        an incredible wife, mother, best friend,
+        and still completely unforgettable.
+      </p>
+
+      <button
+        class="enter-button"
+        id="enterButton"
+      >
+        Open Your Celebration 💜
+      </button>
+
+      <p class="opening-note">
+        Made especially for Stacey
+      </p>
+
+    </div>
+
+  </div>
+
+
+
+  <main>
+
+
+    <!-- =====================================================
+         HERO — STACEY 1
+    ====================================================== -->
+
+    <section class="hero">
+
+      <div class="hero-grid">
+
+        <div class="hero-copy reveal">
+
+          <p class="eyebrow">
+            Chapter 32
+          </p>
+
+          <h1>
+            Stacey
+            <span>looks damn good.</span>
+          </h1>
+
+          <p class="hero-copy-text">
+            Beautiful eyes. Beautiful smile.
+            An incredible body.
+            And somehow the person underneath all of that
+            is even better.
+          </p>
+
+          <div class="hero-pill">
+            Wife • Mom • Best Friend • Absolute Smoke Show
+          </div>
+
+        </div>
+
+
+        <div class="photo hero-photo reveal">
+
+          <img
+            src="Stacey1.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BEAUTIFUL — STACEY 2–4
+    ====================================================== -->
+
+    <section class="section beautiful">
+
+      <div class="heading reveal">
+
+        <p class="eyebrow">
+          Let's get the obvious out of the way
+        </p>
+
+        <h2>
+          Yeah, she's gorgeous.
+        </h2>
+
+        <p>
+          The eyes. The lips. The smile.
+          All of it.
+          Thirty-two is treating Stacey pretty damn well.
+        </p>
+
+      </div>
+
+
+      <div class="beautiful-grid">
+
+        <div class="photo reveal">
+          <img src="Stacey2.jpg" alt="Stacey">
+        </div>
+
+        <div class="photo reveal">
+          <img src="Stacey3.jpg" alt="Stacey">
+        </div>
+
+        <div class="photo reveal">
+          <img src="Stacey4.jpg" alt="Stacey">
+        </div>
+
+      </div>
+
+
+      <div class="beauty-copy reveal">
+
+        <h3>
+          But being beautiful was never
+          the most interesting thing about you.
+        </h3>
+
+        <p>
+          Not even close.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAVORITES — STACEY 5
+    ====================================================== -->
+
+    <section class="section favorites">
+
+      <div class="favorites-layout">
+
+
+        <div class="photo favorites-photo reveal">
+
+          <img
+            src="Stacey5.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+
+        <div>
+
+          <div class="heading reveal">
+
+            <p class="eyebrow">
+              The Stacey starter pack
+            </p>
+
+            <h2>
+              A little bit of Stacey.
+            </h2>
+
+            <p>
+              Equal parts sweet, sarcastic,
+              caffeinated, outdoorsy,
+              and impossible to replace.
+            </p>
+
+          </div>
+
+
+          <div class="favorites-cards">
+
+            <article class="favorite-card reveal">
+
+              <span>💜🩵🩷</span>
+
+              <h3>
+                Her colors
+              </h3>
+
+              <p>
+                Purple, sky blue & pink.
+              </p>
+
+            </article>
+
+
+            <article class="favorite-card reveal">
+
+              <span>🍫🥨</span>
+
+              <h3>
+                Snack situation
+              </h3>
+
+              <p>
+                Chocolate, pretzels & gummies.
+              </p>
+
+            </article>
+
+
+            <article class="favorite-card reveal">
+
+              <span>☕</span>
+
+              <h3>
+                Drink of choice
+              </h3>
+
+              <p>
+                A latte makes everything better.
+              </p>
+
+            </article>
+
+
+            <article class="favorite-card reveal">
+
+              <span>🍂</span>
+
+              <h3>
+                Best season
+              </h3>
+
+              <p>
+                Fall. Obviously.
+              </p>
+
+            </article>
+
+
+            <article class="favorite-card reveal">
+
+              <span>🎵</span>
+
+              <h3>
+                Playlist
+              </h3>
+
+              <p>
+                Taylor Swift, Post Malone,
+                Nirvana... basically anything.
+              </p>
+
+            </article>
+
+
+            <article class="favorite-card reveal">
+
+              <span>😘🐬</span>
+
+              <h3>
+                Emoji energy
+              </h3>
+
+              <p>
+                Somehow this combination makes sense.
+              </p>
+
+            </article>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PERSONALITY — STACEY 6–7
+    ====================================================== -->
+
+    <section class="section chaos">
+
+      <div class="chaos-content">
+
+        <div class="chaos-heading reveal">
+
+          <p class="eyebrow">
+            Personality included
+          </p>
+
+          <h2>
+            Chaos. Fun.
+            Good conversation.
+          </h2>
+
+          <p>
+            Stacey doesn't just show up.
+            She brings something with her.
+            Usually laughter, a little chaos,
+            a conversation worth having,
+            and increasingly dangerous comeback skills.
+          </p>
+
+        </div>
+
+
+        <div class="chaos-photos">
+
+          <div class="photo reveal">
+            <img src="Stacey6.jpg" alt="Stacey">
+          </div>
+
+          <div class="photo reveal">
+            <img src="Stacey7.jpg" alt="Stacey">
+          </div>
+
+        </div>
+
+
+        <div class="chaos-cards">
+
+          <article class="chaos-card reveal">
+
+            <span>😂</span>
+
+            <h3>
+              The Humor
+            </h3>
+
+            <p>
+              Jokes when the mood permits.
+              Timing is everything.
+            </p>
+
+          </article>
+
+
+          <article class="chaos-card reveal">
+
+            <span>😏</span>
+
+            <h3>
+              The Comebacks
+            </h3>
+
+            <p>
+              Getting quicker.
+              Getting sharper.
+              Proceed carefully.
+            </p>
+
+          </article>
+
+
+          <article class="chaos-card reveal">
+
+            <span>✨</span>
+
+            <h3>
+              The Energy
+            </h3>
+
+            <p>
+              Fun, chaos and conversation.
+              The room is better when she's in it.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         STRENGTH — STACEY 8
+    ====================================================== -->
+
+    <section class="section strength">
+
+      <div class="strength-layout">
+
+
+        <div class="photo strength-photo reveal">
+
+          <img
+            src="Stacey8.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+
+        <div class="reveal">
+
+          <p class="eyebrow">
+            One of her greatest strengths
+          </p>
+
+          <h2 class="strength-quote">
+
+            Once Stacey decides
+            something is getting done...
+
+            <span>
+              it's getting fucking done.
+            </span>
+
+          </h2>
+
+          <p class="strength-copy">
+            Determined. Strong.
+            Capable of handling more than she probably
+            gives herself credit for.
+            When it matters, she finds a way.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WHEREVER — STACEY 9
+    ====================================================== -->
+
+    <section class="section wherever">
+
+      <div class="wherever-layout">
+
+
+        <div class="reveal">
+
+          <p class="eyebrow">
+            Favorite place
+          </p>
+
+          <h2>
+            Wherever
+            her people are.
+          </h2>
+
+          <p>
+            Outside. Near the water.
+            Somewhere beautiful.
+            But the truth is, the actual place
+            has never mattered that much.
+          </p>
+
+          <p>
+            Home is wherever the people she loves are.
+          </p>
+
+        </div>
+
+
+        <div class="photo wherever-photo reveal">
+
+          <img
+            src="Stacey9.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         LIFE TOGETHER — STACEY 10–12
+    ====================================================== -->
+
+    <section class="section life">
+
+      <div class="heading reveal">
+
+        <p class="eyebrow">
+          Then there is everything you've built
+        </p>
+
+        <h2>
+          A whole life
+          made out of moments.
+        </h2>
+
+        <p>
+          Some huge.
+          Some ordinary.
+          Some hilarious.
+          Somehow all of them became part of the story.
+        </p>
+
+      </div>
+
+
+      <div class="life-grid">
+
+        <div class="photo reveal">
+          <img src="Stacey10.jpg" alt="Stacey and family">
+        </div>
+
+        <div class="photo reveal">
+          <img src="Stacey11.jpg" alt="Stacey and family">
+        </div>
+
+        <div class="photo reveal">
+          <img src="Stacey12.jpg" alt="Stacey and family">
+        </div>
+
+      </div>
+
+
+      <div class="memory-list">
+
+        <article class="memory reveal">
+
+          <strong>
+            The Wedding
+          </strong>
+
+          <p>
+            The day the next chapter officially began.
+          </p>
+
+        </article>
+
+
+        <article class="memory reveal">
+
+          <strong>
+            The Kids
+          </strong>
+
+          <p>
+            Two of the biggest,
+            best pieces of the life you built together.
+          </p>
+
+        </article>
+
+
+        <article class="memory reveal">
+
+          <strong>
+            The First Concert
+          </strong>
+
+          <p>
+            Your first concert together...
+            and your first concert ever.
+          </p>
+
+        </article>
+
+
+        <article class="memory reveal">
+
+          <strong>
+            Historic Moment
+          </strong>
+
+          <p>
+            And, of course...
+            the first time I touched your butt.
+            Some memories deserve recognition. 😂
+          </p>
+
+        </article>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FROM THE KIDS — STACEY 13 + VIDEOS
+    ====================================================== -->
+
+    <section class="section kids">
+
+      <div class="kids-heading reveal">
+
+        <p class="eyebrow">
+          From two people who know you as Mom
+        </p>
+
+        <h2>
+          A little something
+          from the kids.
+        </h2>
+
+        <p>
+          They may not always say everything,
+          but there was one thing they definitely
+          wanted to tell you today.
+        </p>
+
+      </div>
+
+
+      <div class="photo kids-photo reveal">
+
+        <img
+          src="Stacey13.jpg"
+          alt="Stacey and the kids"
+        >
+
+      </div>
+
+
+      <div class="kid-videos">
+
+
+        <article class="kid-video-card reveal">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="Kid1.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+          <p>
+            Happy Birthday, Mom 💜
+          </p>
+
+        </article>
+
+
+        <article class="kid-video-card reveal">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="Kid2.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+          <p>
+            Happy Birthday, Mom 🩷
+          </p>
+
+        </article>
+
+
+        <!--
+          THIRD VIDEO SLOT
+
+          Upload Kid3.mp4 tomorrow.
+          You do NOT need to change the code.
+        -->
+
+        <article class="kid-video-card reveal">
+
+          <video
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="Kid3.mp4"
+              type="video/mp4"
+            >
+
+          </video>
+
+          <p>
+            One more birthday message ✨
+          </p>
+
+        </article>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HEARTFELT — STACEY 14
+    ====================================================== -->
+
+    <section class="section heartfelt">
+
+      <div class="heartfelt-layout">
+
+
+        <div class="photo heartfelt-photo reveal">
+
+          <img
+            src="Stacey14.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+
+        <div class="heartfelt-copy reveal">
+
+          <p class="eyebrow">
+            From the person beside you
+          </p>
+
+          <h2>
+            And then there's
+            what you mean to me.
+          </h2>
+
+          <blockquote>
+            You're such a good wife,
+            mother and best friend.
+            I couldn't have made it this far
+            in life without you.
+          </blockquote>
+
+          <p class="small-copy">
+            Through the big moments,
+            the hard ones,
+            the funny ones,
+            and all the completely ordinary days
+            in between — you've been there.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         BUILDUP — STACEY 15
+    ====================================================== -->
+
+    <section class="section beautiful">
+
+      <div
+        class="photo reveal"
+        style="
+          width:min(760px,100%);
+          height:min(760px,78vh);
+          margin:0 auto;
+        "
+      >
+
+        <img
+          src="Stacey15.jpg"
+          alt="Stacey"
+        >
+
+      </div>
+
+
+      <div class="beauty-copy reveal">
+
+        <p class="eyebrow">
+          But we're not quite done
+        </p>
+
+        <h3>
+          There's one more memory.
+        </h3>
+
+        <p>
+          And this one has been waiting
+          a very long time.
+        </p>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SECRET WEDDING VIDEO
+    ====================================================== -->
+
+    <section class="secret">
+
+      <div class="secret-content">
+
+
+        <div class="secret-intro reveal">
+
+          <p>
+            One last surprise
+          </p>
+
+          <h2>
+            You've actually
+            never seen this.
+          </h2>
+
+          <p class="secret-line">
+            I've had this since our wedding day.
+            I never really knew when the right time
+            would be to give it to you.
+          </p>
+
+          <p class="secret-line">
+            I think I finally found it.
+          </p>
+
+        </div>
+
+
+        <div class="secret-video reveal">
+
+          <video
+            id="weddingVideo"
+            controls
+            playsinline
+            preload="metadata"
+          >
+
+            <source
+              src="Wedding.mp4"
+              type="video/mp4"
+            >
+
+            Your browser does not support this video.
+
+          </video>
+
+        </div>
+
+
+        <div class="after-video reveal">
+
+          <p>
+            Some memories are worth waiting for.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ENDING — STACEY 16
+    ====================================================== -->
+
+    <section class="ending">
+
+      <div class="ending-content">
+
+
+        <div class="photo ending-photo reveal">
+
+          <img
+            src="Stacey16.jpg"
+            alt="Stacey"
+          >
+
+        </div>
+
+
+        <div class="reveal">
+
+          <p class="eyebrow">
+            Happy 32nd Birthday
+          </p>
+
+          <h2>
+            32 years
+            <span>of Stacey.</span>
+          </h2>
+
+          <p class="ending-copy">
+            A wife.
+            A mother.
+            A best friend.
+            A beautiful woman.
+            A little chaos.
+            A whole lot of strength.
+            And still my favorite person
+            to do life with.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =======================================================
+       FOOTER
+  ======================================================== -->
+
+  <footer>
+
+    <strong>
+      Made with love by Cyber Celebrations
+    </strong>
+
+    <p>
+      Celebrate people, not occasions.
+    </p>
+
+  </footer>
+
+
+
+  <script>
+
+    /* =========================================================
+       OPENING
+    ========================================================= */
+
+    const opening =
+      document.getElementById("opening");
+
+    const enterButton =
+      document.getElementById("enterButton");
+
+
+    enterButton.addEventListener("click", () => {
+
+      opening.classList.add("hidden");
+
+      document.body.classList.remove("locked");
+
+      setTimeout(() => {
+        opening.style.display = "none";
+      }, 900);
+
+    });
+
+
+
+    /* =========================================================
+       REVEAL ANIMATIONS
+    ========================================================= */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+
+    if ("IntersectionObserver" in window) {
+
+      const observer =
+        new IntersectionObserver(
+
+          (entries, observerInstance) => {
+
+            entries.forEach((entry) => {
+
+              if (entry.isIntersecting) {
+
+                entry.target.classList.add("visible");
+
+                observerInstance.unobserve(
+                  entry.target
+                );
+
+              }
+
+            });
+
+          },
+
+          {
+            threshold: 0.12,
+            rootMargin: "0px 0px -45px 0px"
+          }
+
+        );
+
+
+      revealElements.forEach(
+        (element, index) => {
+
+          element.style.transitionDelay =
+            `${Math.min(index % 3, 2) * 80}ms`;
+
+          observer.observe(element);
+
+        }
+      );
+
+    } else {
+
+      revealElements.forEach((element) => {
+        element.classList.add("visible");
+      });
+
+    }
+
+
+
+    /* =========================================================
+       WEDDING VIDEO
+    ========================================================= */
+
+    const weddingVideo =
+      document.getElementById("weddingVideo");
+
+
+    weddingVideo.addEventListener(
+      "ended",
+      () => {
+
+        setTimeout(() => {
+
+          document
+            .querySelector(".ending")
+            .scrollIntoView({
+              behavior: "smooth"
+            });
+
+        }, 800);
+
+      }
+    );
+
+  </script>
+
+
+</body>
+</html>
